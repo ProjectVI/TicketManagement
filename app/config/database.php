@@ -46,42 +46,42 @@ return array(
 
 	'connections' => array(
 
-		'sqlite' => array(
-			'driver'   => 'mysql',
-			'database' => __DIR__.'/../database/production.sqlite',
-			'prefix'   => '',
-		),
+//		'sqlite' => array(
+//			'driver'   => 'mysql',
+//			'database' => __DIR__.'/../database/production.sqlite',
+//			'prefix'   => '',
+//		),
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost:8889',
-			'database'  => 'tms',
-			'username'  => 'root',
-			'password'  => 'root',
+			'host'      => 'localhost:3306',
+			'database'  => 'ticketmanagement',
+			'username'  => 'projectvi',
+			'password'  => 'projectvi',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
-
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'prefix'   => '',
-		),
+//		'pgsql' => array(
+//			'driver'   => 'pgsql',
+//			'host'     => 'localhost',
+//			'database' => 'forge',
+//			'username' => 'forge',
+//			'password' => '',
+//			'charset'  => 'utf8',
+//			'prefix'   => '',
+//			'schema'   => 'public',
+//		),
+//
+//		'sqlsrv' => array(
+//			'driver'   => 'sqlsrv',
+//			'host'     => 'localhost',
+//			'database' => 'database',
+//			'username' => 'root',
+//			'password' => '',
+//			'prefix'   => '',
+//		),
 
 	),
 
@@ -109,16 +109,16 @@ return array(
 	|
 	*/
 
-	'redis' => array(
+//	'redis' => array(
+//
+//		'cluster' => false,
+//
+//		'default' => array(
+//			'host'     => '127.0.0.1',
+//			'port'     => 6379,
+//			'database' => 0,
+//		),
 
-		'cluster' => false,
-
-		'default' => array(
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
-			'database' => 0,
-		),
-
-	),
+//	),
 
 );

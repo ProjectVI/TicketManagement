@@ -1,0 +1,105 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateUsersTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+    {
+        Schema::create('roles', function ($table) {
+            $table->increments('role_id')->unique();
+            $table->string('role_name', 15);
+        });
+        Schema::create('users', function ($table) {
+            $table->increments('user_id')->unique();
+            $table->string('firstname', 50);
+            $table->string('surname', 50);
+            $table->string('email', 50);
+            $table->string('username', 30);
+            $table->string('password', 30);
+            $table->dateTime('create_on');
+            $table->dateTime('update_on');
+            $table->string('team', 3);
+            $table->string('remark', 30);
+            $table->char('flag', 1);
+            $table->integer('role_id')->unsigned();
+
+        });
+
+        Schema::table('users', function($table) {
+            $table->foreign('role_id')
+                ->references('role_id')->on('roles')
+                ->onUpdate('cascade')->onDelete('cascade');
+        });
+
+        Schema::create('ticket_channels', function($table)
+        {
+            $table->increments('channel_id')->unique();
+            $table->string('channel_name',15);
+        });
+
+        Schema::create('ticket_subjects', function($table)
+        {
+            $table->increments('subject_id')->unique();
+            $table->string('subject_name',50);
+        });
+
+        Schema::create('ticket_status', function($table)
+        {
+            $table->increments('status_id')->unique();
+            $table->string('status_name',15);
+        });
+
+        Schema::create('tickets', function ($table) {
+            $table->increments('ticket_id')->unique();
+            $table->string('domain');
+            $table->string('organization');
+            $table->string('problem', 50);
+            $table->text('answer', 50)->nullable();
+            $table->text('remark', 50)->nullable();
+            $table->string('contact_name', 50)->nullable();
+            $table->string('contact_phone', 20)->nullable();
+            $table->string('contact_email', 50)->nullable();
+            $table->string('fax_id', 15)->nullable();
+            $table->string('email_id', 15)->nullable();
+            $table->string('chat_id', 15)->nullable();
+            $table->dateTime('create_on');
+            $table->dateTime('update_on');
+            $table->integer('create_by');
+            $table->integer('update_by');
+            $table->char('flag', 1);
+            $table->integer('channel_id')->unsigned();
+            $table->integer('subject_id')->unsigned();
+            $table->integer('status_id')->unsigned();
+
+        });
+        Schema::table('tickets', function($table) {
+            $table->foreign('channel_id')
+                ->references('channel_id')->on('ticket_channels')
+                ->onDelete('cascade');
+            $table->foreign('subject_id')
+                ->references('subject_id')->on('ticket_subjects')
+                ->onDelete('cascade');
+            $table->foreign('status_id')
+                ->references('status_id')->on('ticket_status')
+                ->onDelete('cascade');
+        });
+    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('roles');
+	}
+
+}
