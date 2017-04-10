@@ -23,8 +23,8 @@ class CreateUsersTable extends Migration {
             $table->string('email', 50);
             $table->string('username', 30);
             $table->string('password', 30);
-            $table->dateTime('create_on');
-            $table->dateTime('update_on');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->string('team', 3);
             $table->string('remark', 30);
             $table->char('flag', 1);
@@ -69,10 +69,10 @@ class CreateUsersTable extends Migration {
             $table->string('fax_id', 15)->nullable();
             $table->string('email_id', 15)->nullable();
             $table->string('chat_id', 15)->nullable();
-            $table->dateTime('create_on');
-            $table->dateTime('update_on');
-            $table->integer('create_by');
-            $table->integer('update_by');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
+            $table->integer('created_by');
+            $table->integer('updated_by');
             $table->char('flag', 1);
             $table->integer('channel_id')->unsigned();
             $table->integer('subject_id')->unsigned();

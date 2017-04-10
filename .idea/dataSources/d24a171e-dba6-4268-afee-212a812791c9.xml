@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ticketmanagement@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ticketmanagement">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <table id="4" parent="2" name="groups"/>
+    <table id="5" parent="2" name="migrations"/>
+    <table id="6" parent="2" name="roles"/>
+    <table id="7" parent="2" name="throttle"/>
+    <table id="8" parent="2" name="ticket_channels"/>
+    <table id="9" parent="2" name="ticket_status"/>
+    <table id="10" parent="2" name="ticket_subjects"/>
+    <table id="11" parent="2" name="tickets"/>
+    <table id="12" parent="2" name="users"/>
+    <table id="13" parent="2" name="users_groups"/>
+    <table id="14" parent="2" name="users_test"/>
+    <column id="15" parent="4" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="4" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="4" name="permissions">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="18" parent="4" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="4" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="20" parent="4" name="groups_name_unique">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="21" parent="4" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="22" parent="4" name="groups_name_unique">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>groups_name_unique</UnderlyingIndexName>
+    </key>
+    <column id="23" parent="5" name="migration">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="5" name="batch">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="6" name="role_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="6" name="role_name">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="27" parent="6" name="roles_role_id_unique">
+      <ColNames>role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="6" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="29" parent="6" name="roles_role_id_unique">
+      <ColNames>role_id</ColNames>
+      <UnderlyingIndexName>roles_role_id_unique</UnderlyingIndexName>
+    </key>
+    <column id="30" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="7" name="user_id">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+    </column>
+    <column id="32" parent="7" name="ip_address">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="7" name="attempts">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="34" parent="7" name="suspended">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="35" parent="7" name="banned">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="36" parent="7" name="last_attempt_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="37" parent="7" name="suspended_at">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="38" parent="7" name="banned_at">
+      <Position>9</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="39" parent="7" name="throttle_user_id_index">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="40" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="8" name="channel_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="8" name="channel_name">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="8" name="ticket_channels_channel_id_unique">
+      <ColNames>channel_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>channel_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="45" parent="8" name="ticket_channels_channel_id_unique">
+      <ColNames>channel_id</ColNames>
+      <UnderlyingIndexName>ticket_channels_channel_id_unique</UnderlyingIndexName>
+    </key>
+    <column id="46" parent="9" name="status_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="9" name="status_name">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="9" name="ticket_status_status_id_unique">
+      <ColNames>status_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>status_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="50" parent="9" name="ticket_status_status_id_unique">
+      <ColNames>status_id</ColNames>
+      <UnderlyingIndexName>ticket_status_status_id_unique</UnderlyingIndexName>
+    </key>
+    <column id="51" parent="10" name="subject_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="10" name="subject_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="53" parent="10" name="ticket_subjects_subject_id_unique">
+      <ColNames>subject_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>subject_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="55" parent="10" name="ticket_subjects_subject_id_unique">
+      <ColNames>subject_id</ColNames>
+      <UnderlyingIndexName>ticket_subjects_subject_id_unique</UnderlyingIndexName>
+    </key>
+    <column id="56" parent="11" name="ticket_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="57" parent="11" name="domain">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="11" name="organization">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="11" name="problem">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="11" name="answer">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="61" parent="11" name="remark">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="62" parent="11" name="contact_name">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="63" parent="11" name="contact_phone">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="64" parent="11" name="contact_email">
+      <Position>9</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="65" parent="11" name="fax_id">
+      <Position>10</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="66" parent="11" name="email_id">
+      <Position>11</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="67" parent="11" name="chat_id">
+      <Position>12</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="68" parent="11" name="created_at">
+      <Position>13</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="69" parent="11" name="updated_at">
+      <Position>14</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="70" parent="11" name="created_by">
+      <Position>15</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="11" name="updated_by">
+      <Position>16</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="11" name="flag">
+      <Position>17</Position>
+      <DataType>char(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="11" name="channel_id">
+      <Position>18</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="11" name="subject_id">
+      <Position>19</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="11" name="status_id">
+      <Position>20</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="11" name="tickets_channel_id_foreign">
+      <ColNames>channel_id</ColNames>
+    </index>
+    <index id="77" parent="11" name="tickets_status_id_foreign">
+      <ColNames>status_id</ColNames>
+    </index>
+    <index id="78" parent="11" name="tickets_subject_id_foreign">
+      <ColNames>subject_id</ColNames>
+    </index>
+    <index id="79" parent="11" name="tickets_ticket_id_unique">
+      <ColNames>ticket_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ticket_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="81" parent="11" name="tickets_ticket_id_unique">
+      <ColNames>ticket_id</ColNames>
+      <UnderlyingIndexName>tickets_ticket_id_unique</UnderlyingIndexName>
+    </key>
+    <foreign-key id="82" parent="11" name="tickets_channel_id_foreign">
+      <ColNames>channel_id</ColNames>
+      <RefSchemaName>ticketmanagement</RefSchemaName>
+      <RefTableName>ticket_channels</RefTableName>
+      <RefColNames>channel_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="83" parent="11" name="tickets_subject_id_foreign">
+      <ColNames>subject_id</ColNames>
+      <RefSchemaName>ticketmanagement</RefSchemaName>
+      <RefTableName>ticket_subjects</RefTableName>
+      <RefColNames>subject_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="84" parent="11" name="tickets_status_id_foreign">
+      <ColNames>status_id</ColNames>
+      <RefSchemaName>ticketmanagement</RefSchemaName>
+      <RefTableName>ticket_status</RefTableName>
+      <RefColNames>status_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="85" parent="12" name="user_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="86" parent="12" name="firstname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="12" name="surname">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="12" name="email">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="12" name="username">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="12" name="password">
+      <Position>6</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="12" name="created_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="92" parent="12" name="updated_at">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="93" parent="12" name="team">
+      <Position>9</Position>
+      <DataType>varchar(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="12" name="remark">
+      <Position>10</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="12" name="flag">
+      <Position>11</Position>
+      <DataType>char(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="12" name="role_id">
+      <Position>12</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="97" parent="12" name="users_role_id_foreign">
+      <ColNames>role_id</ColNames>
+    </index>
+    <index id="98" parent="12" name="users_user_id_unique">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="100" parent="12" name="users_user_id_unique">
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>users_user_id_unique</UnderlyingIndexName>
+    </key>
+    <foreign-key id="101" parent="12" name="users_role_id_foreign">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>ticketmanagement</RefSchemaName>
+      <RefTableName>roles</RefTableName>
+      <RefColNames>role_id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="102" parent="13" name="user_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="13" name="group_id">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="104" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id
+group_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="105" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="106" parent="14" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="14" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="14" name="permissions">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="109" parent="14" name="activated">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="110" parent="14" name="activation_code">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="111" parent="14" name="activated_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="112" parent="14" name="last_login">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="113" parent="14" name="persist_code">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="114" parent="14" name="reset_password_code">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="115" parent="14" name="first_name">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="116" parent="14" name="last_name">
+      <Position>12</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="117" parent="14" name="created_at">
+      <Position>13</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="118" parent="14" name="updated_at">
+      <Position>14</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="119" parent="14" name="users_activation_code_index">
+      <ColNames>activation_code</ColNames>
+    </index>
+    <index id="120" parent="14" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="121" parent="14" name="users_reset_password_code_index">
+      <ColNames>reset_password_code</ColNames>
+    </index>
+    <key id="122" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="123" parent="14" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
