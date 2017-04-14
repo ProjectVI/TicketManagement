@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,13 +15,16 @@ class CreateUsersTable extends Migration {
         Schema::create('roles', function ($table) {
             $table->increments('role_id')->unique();
             $table->string('role_name', 15);
+            $table->char('flag', 1);
         });
         Schema::create('teams', function ($table) {
             $table->increments('team_id')->unique();
             $table->string('team_name', 15);
+            $table->char('flag', 1);
         });
+        /*
         Schema::create('users', function ($table) {
-            $table->increments('user_id')->unique();
+            $table->increments('id')->unique();
             $table->string('firstname', 50);
             $table->string('surname', 50);
             $table->string('email', 50);
@@ -29,7 +32,7 @@ class CreateUsersTable extends Migration {
             $table->string('password', 30);
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
-            $table->integer('team_id', 3)->unsigned();
+            $table->integer('team_id')->unsigned();
             $table->string('remark', 30);
             $table->char('flag', 1);
             $table->integer('role_id')->unsigned();
@@ -44,23 +47,26 @@ class CreateUsersTable extends Migration {
                 ->references('team_id')->on('teams')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
-
+        */
         Schema::create('ticket_channels', function($table)
         {
             $table->increments('channel_id')->unique();
             $table->string('channel_name',15);
+            $table->char('flag', 1);
         });
 
         Schema::create('ticket_subjects', function($table)
         {
             $table->increments('subject_id')->unique();
             $table->string('subject_name',50);
+            $table->char('flag', 1);
         });
 
         Schema::create('ticket_status', function($table)
         {
             $table->increments('status_id')->unique();
             $table->string('status_name',15);
+            $table->char('flag', 1);
         });
 
         Schema::create('tickets', function ($table) {
@@ -108,11 +114,10 @@ class CreateUsersTable extends Migration {
         Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
         Schema::dropIfExists('teams');
+        Schema::dropIfExists('tickets');
         Schema::dropIfExists('ticket_chanels');
         Schema::dropIfExists('ticket_status');
         Schema::dropIfExists('ticket_subjects');
-        Schema::dropIfExists('tickets');
-
 	}
 
 }
