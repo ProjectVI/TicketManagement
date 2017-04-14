@@ -16,6 +16,10 @@ class CreateUsersTable extends Migration {
             $table->increments('role_id')->unique();
             $table->string('role_name', 15);
         });
+        Schema::create('teams', function ($table) {
+            $table->increments('team_id')->unique();
+            $table->string('team_name', 15);
+        });
         Schema::create('users', function ($table) {
             $table->increments('user_id')->unique();
             $table->string('firstname', 50);
@@ -25,7 +29,7 @@ class CreateUsersTable extends Migration {
             $table->string('password', 30);
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
-            $table->string('team', 3);
+            $table->integer('team_id', 3)->unsigned();
             $table->string('remark', 30);
             $table->char('flag', 1);
             $table->integer('role_id')->unsigned();
@@ -35,6 +39,9 @@ class CreateUsersTable extends Migration {
         Schema::table('users', function($table) {
             $table->foreign('role_id')
                 ->references('role_id')->on('roles')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('team_id')
+                ->references('team_id')->on('teams')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
 
@@ -77,8 +84,8 @@ class CreateUsersTable extends Migration {
             $table->integer('channel_id')->unsigned();
             $table->integer('subject_id')->unsigned();
             $table->integer('status_id')->unsigned();
-
         });
+
         Schema::table('tickets', function($table) {
             $table->foreign('channel_id')
                 ->references('channel_id')->on('ticket_channels')
@@ -100,6 +107,12 @@ class CreateUsersTable extends Migration {
 	{
         Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
+        Schema::dropIfExists('teams');
+        Schema::dropIfExists('ticket_chanels');
+        Schema::dropIfExists('ticket_status');
+        Schema::dropIfExists('ticket_subjects');
+        Schema::dropIfExists('tickets');
+
 	}
 
 }
