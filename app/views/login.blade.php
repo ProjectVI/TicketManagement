@@ -25,6 +25,7 @@
                     {{ Form::submit('Login', array('class' => 'btn btn-success')) }}
                     {{ HTML::link('/', 'Cancel', array('class' => 'btn btn-danger')) }}
                 </div>
+
                 {{ Form::close() }}
             </div>
         </div>
