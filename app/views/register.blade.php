@@ -37,6 +37,10 @@
                 {{ Form::text('role_id', '', array('class' => 'form-control', 'placeholder' => 'Role')) }}
             </div>
             <div class="form-group">
+                {{ Form::label('team_id', 'Team') }}
+                {{ Form::text('team_id', '', array('class' => 'form-control', 'placeholder' => 'Team')) }}
+            </div>
+            <div class="form-group">
                 {{ Form::submit('Register', array('class' => 'btn btn-success')) }}
                 {{ HTML::link('/', 'Cancel', array('class' => 'btn btn-danger')) }}
             </div>

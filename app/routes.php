@@ -11,32 +11,20 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('hello');
-//});
+Route::get('/', function() {
+    return View::make('login');
+});
+Route::get('logout', array('uses' => 'AccountController@logout'));
+Route::get('register', 'AccountController@getRegister');
+Route::post('register', 'AccountController@postRegister');
+Route::post('login', 'AccountController@postLogin');
 
-//Route::get('login', function() {
-//    return View::make('login');
-//});
-////POST route
-//Route::post('login', 'AccountController@login');
-//
-//Route::get('logout', array('uses' => 'AccountController@logout'));
 
-Route::get('register', 'HomeController@getRegister');
-Route::get('login', 'HomeController@getLogin');
-Route::post('login', 'HomeController@postLogin');
-Route::post('register', 'HomeController@postRegister');
 Route::group(array('before' => 'auth'), function(){
     Route::get('admin', 'AdminController@index');
-    Route::get('logout', 'HomeController@logout');
+    Route::get('logout', 'AccountController@logout');
 });
 
-Route::get('/', function()
-{
-    return View::make('home');
-});
 Route::get('/analytics', function()
 {
     return View::make('analytics');
@@ -46,6 +34,27 @@ Route::get('/admin', function()
     return View::make('admin');
 });
 
+Route::get('/home', function()
+{
+    return View::make('home');
+});
+
+Route::resource('tickets', 'TicketsController');
+//Route::get('home', 'TicketsController@subject');
+Route::get('/home', function()
+{
+    $tickets = Ticket::all();
+    $subjects = Subject::all();
+
+    return View::make('home')->with('tickets', $tickets);
+    return View::make('home')->with('subjects', $subjects);
+});
+
+//Route::group(array('before'=>'csrf'),function() {
+//    Route::post('login',array('as'=>'post-user-login','uses'=>'HomeController@postLogin'));
+//});
+
+//Route::get('home/create', array('uses'=>'TicketController@create'));
 
 //Route::post('contact',function()
 //{
@@ -62,3 +71,8 @@ Route::get('/admin', function()
 //    }
 //    return 'Message has been sent. Thank you!';
 //});
+
+
+
+
+
