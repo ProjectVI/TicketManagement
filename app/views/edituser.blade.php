@@ -16,11 +16,11 @@
                     </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse in">
-                    <a href="/admin">User</a><br>
-                    <a href="/channel">Channel</a><br>
-                    <a href="/subject">Subject</a><br>
-                    <a href="/status">Status</a><br>
-                    <a href="/team">Team</a><br>
+                    <h4><a >User</a></h4><br>
+                    <h4><a href="open.html">Channel</a></h4><br>
+                    <h4><a href= "Subject.html">Subject</a></h4><br>
+                    <h4><a href="Status.html">Status</a></h4><br>
+                    <h4><a href="Team.html">Team</a></h4><br>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <div id="collapse1" class="panel-collapse collapse in">
 
                     <div class="panel-body">
-                        {{ Form::open(array('url' => 'register')) }}
+                        {{ Form::open(array('url' => 'edituser')) }}
                         @if($errors->any())
                             <div class="alert alert-danger">
                                 <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -73,7 +73,7 @@
                             {{ Form::text('team_id', '', array('class' => 'form-control', 'placeholder' => 'Team')) }}
                         </div>
                         <div class="form-group">
-                            {{ Form::submit('Register', array('class' => 'btn btn-success')) }}
+                            {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
                             {{ HTML::link('/', 'Cancel', array('class' => 'btn btn-danger')) }}
                         </div>
                         {{ Form::close() }}
@@ -81,7 +81,5 @@
 
                     <!--Table end-->
                 </div>
-            </div>
-        </div>
-    </div>
+
 @stop

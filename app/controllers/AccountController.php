@@ -14,7 +14,11 @@ class AccountController extends BaseController {
                 'role_id' => Input::get('role_id'),
                 'team_id' => Input::get('team_id'),
             ));
-            echo 'Success!';
+            //echo 'Success!';
+            //return Redirect::to('admin');
+            //$request->session()->flash('alert-success', 'User was successful added!');
+            Session::flash('flash_message','successfully saved.');
+            return Redirect::to('admin');
         }
         catch (Cartalyst\Sentry\Users\UserExistsException $e)
         {
@@ -85,5 +89,18 @@ class AccountController extends BaseController {
     public function getLogin()
     {
         return View::make('login');
+    }
+
+    public function getEditUser()
+    {
+        return View::make('edituser');
+    }
+    public function postEditUser()
+    {
+        #todo
+
+        \Session::flash('flash_message','successfully saved.');
+        return Redirect::to('admin');
+
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class TicketsController extends \BaseController {
+class TicketsController extends BaseController {
 
 	/**
 	 * Display a listing of tickets
@@ -10,14 +10,14 @@ class TicketsController extends \BaseController {
 	public function index()
 	{
 		//$tickets = Ticket::all();
-        $tickets = DB::table('tickets')
-            ->join('ticket_subject', 'tickets.subject_id', '=', 'ticket_subject.subject_id')
+        $tickets = Ticket::table('tickets')
+            ->join('ticket_subjects', 'tickets.subject_id', '=', 'ticket_subjects.subject_id')
             ->join('ticket_channels', 'tickets.channel_id', '=', 'ticket_channels.channel_id')
             ->join('ticket_status', 'tickets.status_id', '=', 'ticket_status.status_id')
-            ->join('users', 'tickets.created_by', '=', 'users.user_id')
-            ->select('tickets.*', 'ticket_subject.subject_name', 'users.firstname' ,'ticket_status.status_name' ,'ticket_channels.channel_name')
+            ->join('users', 'tickets.created_by', '=', 'users.id')
+            ->select('tickets.*', 'ticket_subjects.subject_name', 'users.firstname' ,'ticket_status.status_name' ,'ticket_channels.channel_name')
             ->get();
-		return View::make('tickets.index', compact('tickets'));
+		return View::make('home', compact('tickets'));
 	}
 
 	/**
@@ -27,57 +27,9 @@ class TicketsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('tickets.create');
-        //try
-        //{
-//            $user = Sentry::createUser(array(
-//                'firstname' => Input::get('firstname'),
-//                'surname' => Input::get('surname'),
-//                'username' => Input::get('username'),
-//                'email' => Input::get('email'),
-//                'password' => Input::get('password'),
-//                'role_id' => Input::get('role_id'),
-//                'team_id' => Input::get('team_id'),
-//            ));
-        /*
-        $ticket= Input::all();
-        $ticket = new Ticket;
-        $ticket->domain = Input::get('domain');
-        $ticket->organization = Input::get('organization');
-        $ticket->problem = Input::get('problem');
-        $ticket->answer = Input::get('answer');
-        $ticket->remark = Input::get('remark');
-        $ticket->contact_name = Input::get('contact_name');
-        $ticket->contact_phone = Input::get('contact_phone');
-        $ticket->contact_email = Input::get('contact_email');
-        $ticket->fax_id = Input::get('faxid');
-        */
-        /*
-        $ticket->email_id = Input::get('email_id');
-        $ticket->chat_id = Input::get('chat_id');
+	    echo "test";
+		//return View::make('tickets.create');
 
-        $ticket->created_at = Input::get('created_at');
-        $ticket->updated_at = Input::get('updated_at');
-        $ticket->created_by = Input::get('created_by');
-        $ticket->updated_by = Input::get('updated_by');
-        */
-        /*
-        $ticket->created_by = 'Ammii';
-        $ticket->updated_by = 'Ammii';
-        $ticket->flag = 'A';
-        $ticket->channel_id = '1';
-        $ticket->subject_id = '1';
-        $ticket->status_id = '1';
-        $ticket->save();
-        echo 'Success!';
-
-        return Redirect::back();
-        */
-        //}
-        //catch (Exception $e)
-        //{
-        //    echo 'Error';
-        //}
 	}
 
 	/**
@@ -94,9 +46,9 @@ class TicketsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Ticket::create($data);
+		//Ticket::create($data);
 
-		return Redirect::route('tickets.index');
+		//return Redirect::route('tickets.index');
 	}
 
 	/**
@@ -109,7 +61,7 @@ class TicketsController extends \BaseController {
 	{
 		$ticket = Ticket::findOrFail($id);
 
-		return View::make('tickets.show', compact('ticket'));
+		return View::make('home', compact('ticket'));
 	}
 
 	/**
