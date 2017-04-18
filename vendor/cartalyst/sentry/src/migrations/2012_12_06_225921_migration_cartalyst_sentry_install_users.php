@@ -78,3 +78,4 @@ class MigrationCartalystSentryInstallUsers extends Migration {
 	}
 
 }
+
