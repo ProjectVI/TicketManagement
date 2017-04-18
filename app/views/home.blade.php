@@ -313,13 +313,13 @@
                                         @foreach($tickets as $ticket)
                                             <tr>
                                                 <td data-sortable='true'>{{ $ticket->created_at }}</td>
-                                                <td>{{ $ticket->subject_id }}</td>
+                                                <td>{{ $ticket->subject }}</td>
                                                 <td data-sortable='true'>{{ $ticket->problem }}</td>
-                                                <td>{{ $ticket->status_id }}</td>
-                                                <td>{{ $ticket->created_by }}</td>
+                                                <td>{{ $ticket->status }}</td>
+                                                <td>{{ $ticket->firstname }}</td>
                                                 <td>{{ $ticket->fax_id }}</td>
                                                 <td>{{ $ticket->channel_id }}</td>
-                                                <td>{{ $ticket->email_id }}</td>
+                                                <td>{{ $ticket->channel }}</td>
                                                 <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                                             </tr>
                                         @endforeach

@@ -18,6 +18,8 @@ class TicketsController extends BaseController {
             ->select('tickets.*', 'ticket_subjects.subject_name', 'users.firstname' ,'ticket_status.status_name' ,'ticket_channels.channel_name')
             ->get();
 		return View::make('home', compact('tickets'));
+
+
 	}
 
 	/**

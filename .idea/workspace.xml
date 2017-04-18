@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbf18214-486e-46c7-85b7-56d57a6b79b4" name="Default" comment="Merge Admin Page &amp; Ammii Code">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/channel.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/edituser.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/navigator.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/status.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/subject.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/team.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/TicketManagement.iml" afterPath="$PROJECT_DIR$/.idea/TicketManagement.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/d24a171e-dba6-4268-afee-212a812791c9.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/d24a171e-dba6-4268-afee-212a812791c9.xml" />
+    <list default="true" id="dbf18214-486e-46c7-85b7-56d57a6b79b4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AccountController.php" afterPath="$PROJECT_DIR$/app/controllers/AccountController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TicketsController.php" afterPath="$PROJECT_DIR$/app/controllers/TicketsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin.blade.php" afterPath="$PROJECT_DIR$/app/views/admin.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.blade.php" afterPath="$PROJECT_DIR$/app/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.blade.php" afterPath="$PROJECT_DIR$/app/views/register.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,7 +64,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="ticket_subjects" />
+        <option name="myItemId" value="users" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -95,25 +82,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="ticket_status" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="@localhost [2]" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ticketmanagement" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ticket_channels" />
+        <option name="myItemId" value="tickets" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -142,78 +111,108 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="161">
+              <caret line="318" column="73" lean-forward="false" selection-start-line="318" selection-start-column="73" selection-end-line="318" selection-end-column="73" />
               <folding>
-                <marker date="1492179516000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="449:458" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="917:961" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="1138:1173" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="1210:1334" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="1540:1575" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="1612:1745" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="1948:1988" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="2025:2119" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="2391:2424" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="2461:2548" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="2751:2784" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="2821:2981" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="3184:3216" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="3253:3339" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="3611:3646" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="3683:3772" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="3975:4004" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="4041:4124" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="4327:4356" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="4393:4506" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="4776:4821" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="4858:4957" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5160:5205" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5242:5341" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5544:5585" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5622:5717" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5897:5958" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="5987:6050" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="6102:6117" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="6489:6533" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="6890:6925" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="6962:7086" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="7291:7326" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="7363:7496" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="7699:7739" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="7776:7870" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="8142:8175" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="8212:8299" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="8502:8535" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="8572:8732" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="8935:8967" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="9004:9090" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="9362:9397" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="9434:9523" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="9728:9773" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="9810:9909" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="10178:10223" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="10260:10359" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="10563:10602" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="10639:10732" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="10935:10972" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="11009:11100" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="11369:11413" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="11450:11548" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="11753:11797" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="11834:11932" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="12222:12283" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="12487:12550" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="12602:12617" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="14859:14880" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="14942:14963" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15046:15064" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15126:15146" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15208:15229" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15291:15308" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15370:15391" ph="..." />
-                <marker date="1492179516000" expanded="true" signature="15453:15472" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9:17" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="449:458" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="917:961" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="1138:1173" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="1210:1334" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="1540:1575" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="1612:1745" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="1948:1988" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="2025:2119" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="2391:2424" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="2461:2548" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="2751:2784" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="2821:2981" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="3184:3216" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="3253:3339" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="3611:3646" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="3683:3772" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="3975:4004" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="4041:4124" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="4327:4356" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="4393:4506" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="4776:4821" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="4858:4957" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5160:5205" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5242:5341" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5544:5585" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5622:5717" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5897:5958" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="5987:6050" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="6102:6117" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="6489:6533" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="6890:6925" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="6962:7086" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="7291:7326" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="7363:7496" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="7699:7739" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="7776:7870" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="8142:8175" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="8212:8299" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="8502:8535" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="8572:8732" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="8935:8967" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9004:9090" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9362:9397" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9434:9523" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9728:9773" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="9810:9909" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="10178:10223" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="10260:10359" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="10563:10602" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="10639:10732" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="10935:10972" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="11009:11100" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="11369:11413" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="11450:11548" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="11753:11797" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="11834:11932" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="12222:12283" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="12487:12550" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="12602:12617" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="14859:14880" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="14942:14960" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15043:15061" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15123:15140" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15202:15222" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15284:15301" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15363:15384" ph="..." />
+                <marker date="1492509415000" expanded="true" signature="15446:15464" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TicketsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/TicketsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -221,10 +220,9 @@
       <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
+            <state relative-caret-position="330">
               <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding>
-                <element signature="e#1459#1466#1#HTML" expanded="true" />
                 <marker date="1492349677000" expanded="true" signature="9:17" ph="..." />
                 <marker date="1492349677000" expanded="true" signature="29:38" ph="..." />
                 <marker date="1492349677000" expanded="true" signature="1232:1272" ph="..." />
@@ -251,11 +249,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="206">
+              <caret line="89" column="43" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="89" selection-end-column="43" />
               <folding>
                 <element signature="e#7#392#0#PHP" expanded="true" />
               </folding>
@@ -263,123 +261,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicketsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/TicketsController.php">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d24a171e-dba6-4268-afee-212a812791c9/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+            <state relative-caret-position="180">
+              <caret line="12" column="50" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="12" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="status.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/status.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="21" selection-end-column="48" />
-              <folding>
-                <element signature="e#1489#1496#1#HTML" expanded="true" />
-                <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1377:1383" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1389:1420" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1682:1760" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3291:3311" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3373:3395" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3457:3472" ph="..." />
-              </folding>
+      <file leaf-file-name="ticketmanagement.users" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subject.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/subject.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="21" selection-end-column="48" />
-              <folding>
-                <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1378:1384" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1390:1421" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1683:1762" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3296:3318" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3380:3404" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3466:3482" ph="..." />
-              </folding>
+      <file leaf-file-name="ticketmanagement.tickets" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.tickets">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin.blade.php">
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-              <folding>
-                <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1375:1381" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1387:1418" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1664:1740" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3378:3389" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3443:3461" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3515:3531" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3585:3602" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3656:3672" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3726:3742" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3796:3809" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3863:3882" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3936:3955" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/team.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding>
-                <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1375:1381" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1387:1418" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1680:1756" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3280:3296" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3358:3376" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3438:3451" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="channel.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/channel.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-              <folding>
-                <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1378:1384" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1390:1421" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="1683:1762" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3295:3317" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3379:3403" ph="..." />
-                <marker date="1492349617000" expanded="true" signature="3465:3481" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AccountController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            <state relative-caret-position="288">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -389,7 +315,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hide</find>
       <find>export</find>
       <find>Here is the result of event.</find>
       <find>roles</find>
@@ -419,6 +344,7 @@
       <find>ticket</find>
       <find>register</find>
       <find>User</find>
+      <find>cr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -451,7 +377,6 @@
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d24a171e-dba6-4268-afee-212a812791c9/console.sql" />
         <option value="$PROJECT_DIR$/app/models/Channel.php" />
         <option value="$PROJECT_DIR$/app/models/Status.php" />
         <option value="$PROJECT_DIR$/app/models/Subject.php" />
@@ -459,25 +384,26 @@
         <option value="$PROJECT_DIR$/app/models/Team.php" />
         <option value="$PROJECT_DIR$/app/controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/models/Ticket.php" />
-        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2017_04_04_041038_create_table.php" />
         <option value="$PROJECT_DIR$/vendor/cartalyst/sentry/src/migrations/2012_12_06_225921_migration_cartalyst_sentry_install_users.php" />
         <option value="$PROJECT_DIR$/vendor/cartalyst/sentry/src/config/config.php" />
         <option value="$PROJECT_DIR$/app/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/views/navigator.blade.php" />
         <option value="$PROJECT_DIR$/app/views/edituser.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/TicketsController.php" />
         <option value="$PROJECT_DIR$/app/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/app/views/status.blade.php" />
         <option value="$PROJECT_DIR$/app/views/subject.blade.php" />
         <option value="$PROJECT_DIR$/app/views/team.blade.php" />
         <option value="$PROJECT_DIR$/app/views/channel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/admin.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TicketsController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d24a171e-dba6-4268-afee-212a812791c9/console.sql" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -544,8 +470,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -558,382 +482,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartalyst" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentry" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schema" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emails" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicketManagement" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1087,7 +639,9 @@
       <workItem from="1491936326245" duration="18888000" />
       <workItem from="1492089125811" duration="14614000" />
       <workItem from="1492163765361" duration="4541000" />
-      <workItem from="1492343689815" duration="5318000" />
+      <workItem from="1492343689815" duration="5633000" />
+      <workItem from="1492363882233" duration="1481000" />
+      <workItem from="1492505575415" duration="4425000" />
     </task>
     <task id="LOCAL-00001" summary="database migration">
       <created>1491281747035</created>
@@ -1096,31 +650,38 @@
       <option name="project" value="LOCAL" />
       <updated>1491281747035</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge Admin Page &amp; Ammii Code">
+      <created>1492349727940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492349727940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87402000" />
+    <option name="totallyTimeSpent" value="93623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1898223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33948863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19547658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17285945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25201938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17755681" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17755681" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33948863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1180,190 +741,159 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/cartalyst/sentry/src/migrations/2012_12_06_225921_migration_cartalyst_sentry_install_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.throttle">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users_bak">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1382,38 +912,38 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1425,14 +955,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1445,98 +975,86 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users_groups">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.migrations">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.groups">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1551,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,27 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <marker date="1492164430000" expanded="true" signature="9:17" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="29:38" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="236:273" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="481:518" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="634:665" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="690:775" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="864:901" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="926:1017" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="1106:1166" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="1191:1254" ph="..." />
-            <marker date="1492164430000" expanded="true" signature="1299:1314" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1591,27 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.tickets">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="61" />
-          <folding>
-            <marker date="1492145708000" expanded="true" signature="1098:1117" ph="..." />
-            <marker date="1492145708000" expanded="true" signature="1198:1207" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1619,7 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1627,47 +1105,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#1505#1512#1#HTML" expanded="true" />
-            <marker date="1492349506000" expanded="true" signature="9:17" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="29:38" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="1278:1318" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="1551:1613" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="1761:1801" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="1834:1928" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2041:2078" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2111:2202" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2315:2352" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2385:2476" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2589:2628" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2661:2754" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2867:2904" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="2937:3028" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3141:3173" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3206:3292" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3405:3437" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3470:3556" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3669:3730" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3763:3826" ph="..." />
-            <marker date="1492349506000" expanded="true" signature="3886:3901" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TicketsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/status.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="21" selection-end-column="48" />
+        <state relative-caret-position="255">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="21" selection-end-column="48" />
           <folding>
-            <element signature="e#1489#1496#1#HTML" expanded="true" />
             <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
             <marker date="1492349617000" expanded="true" signature="29:38" ph="..." />
             <marker date="1492349617000" expanded="true" signature="1377:1383" ph="..." />
@@ -1728,86 +1173,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding>
-            <marker date="1492179516000" expanded="true" signature="9:17" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="449:458" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="917:961" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="1138:1173" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="1210:1334" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="1540:1575" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="1612:1745" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="1948:1988" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="2025:2119" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="2391:2424" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="2461:2548" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="2751:2784" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="2821:2981" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="3184:3216" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="3253:3339" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="3611:3646" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="3683:3772" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="3975:4004" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="4041:4124" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="4327:4356" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="4393:4506" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="4776:4821" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="4858:4957" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5160:5205" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5242:5341" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5544:5585" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5622:5717" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5897:5958" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="5987:6050" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="6102:6117" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="6489:6533" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="6890:6925" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="6962:7086" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="7291:7326" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="7363:7496" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="7699:7739" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="7776:7870" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="8142:8175" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="8212:8299" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="8502:8535" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="8572:8732" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="8935:8967" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="9004:9090" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="9362:9397" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="9434:9523" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="9728:9773" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="9810:9909" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="10178:10223" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="10260:10359" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="10563:10602" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="10639:10732" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="10935:10972" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="11009:11100" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="11369:11413" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="11450:11548" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="11753:11797" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="11834:11932" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="12222:12283" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="12487:12550" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="12602:12617" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="14859:14880" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="14942:14963" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15046:15064" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15126:15146" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15208:15229" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15291:15308" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15370:15391" ph="..." />
-            <marker date="1492179516000" expanded="true" signature="15453:15472" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/team.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="270">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <marker date="1492349617000" expanded="true" signature="9:17" ph="..." />
@@ -1839,12 +1207,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TicketsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.tickets">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="330">
           <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding>
-            <element signature="e#1459#1466#1#HTML" expanded="true" />
             <marker date="1492349677000" expanded="true" signature="9:17" ph="..." />
             <marker date="1492349677000" expanded="true" signature="29:38" ph="..." />
             <marker date="1492349677000" expanded="true" signature="1232:1272" ph="..." />
@@ -1870,13 +1274,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/4d6aa907/d24a171e-dba6-4268-afee-212a812791c9/ticketmanagement.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d24a171e-dba6-4268-afee-212a812791c9/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="50" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="89" column="43" lean-forward="false" selection-start-line="82" selection-start-column="25" selection-end-line="89" selection-end-column="43" />
           <folding>
             <element signature="e#7#392#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="318" column="73" lean-forward="false" selection-start-line="318" selection-start-column="73" selection-end-line="318" selection-end-column="73" />
+          <folding>
+            <marker date="1492509415000" expanded="true" signature="9:17" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="449:458" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="917:961" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="1138:1173" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="1210:1334" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="1540:1575" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="1612:1745" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="1948:1988" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="2025:2119" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="2391:2424" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="2461:2548" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="2751:2784" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="2821:2981" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="3184:3216" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="3253:3339" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="3611:3646" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="3683:3772" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="3975:4004" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="4041:4124" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="4327:4356" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="4393:4506" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="4776:4821" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="4858:4957" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5160:5205" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5242:5341" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5544:5585" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5622:5717" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5897:5958" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="5987:6050" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="6102:6117" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="6489:6533" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="6890:6925" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="6962:7086" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="7291:7326" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="7363:7496" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="7699:7739" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="7776:7870" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="8142:8175" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="8212:8299" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="8502:8535" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="8572:8732" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="8935:8967" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="9004:9090" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="9362:9397" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="9434:9523" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="9728:9773" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="9810:9909" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="10178:10223" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="10260:10359" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="10563:10602" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="10639:10732" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="10935:10972" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="11009:11100" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="11369:11413" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="11450:11548" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="11753:11797" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="11834:11932" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="12222:12283" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="12487:12550" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="12602:12617" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="14859:14880" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="14942:14960" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15043:15061" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15123:15140" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15202:15222" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15284:15301" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15363:15384" ph="..." />
+            <marker date="1492509415000" expanded="true" signature="15446:15464" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

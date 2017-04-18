@@ -17,6 +17,13 @@ class HomeController extends BaseController {
 
     public function showWelcome()
     {
+    /*
+        $subjects = DB::table('ticket_subjects')->select('subject_name as subject')->get();
+        $statuses = DB::table('ticket_status')->select('status_name as status')->get();
+        $channels = DB::table('ticket_channels')->select('channel_name as channel')->get();
+        $users = DB::table('users')->select('firstname as user')->get();
+        $teams = DB::table('teams')->select('team_name as team')->get();
+    */
         return View::make('hello');
     }
 

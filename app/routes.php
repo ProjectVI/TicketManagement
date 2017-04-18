@@ -45,6 +45,7 @@ Route::get('/admin', function()
 
 Route::get('/home', function()
 {
+
     return View::make('home');
 });
 
@@ -76,8 +77,27 @@ Route::resource('tickets', 'TicketsController');
 
 Route::get('/home', function()
 {
-    $tickets = Ticket::all();
+    //$tickets = Ticket::all();
     //$subjects = Subject::all();
+    $tickets = DB::table('tickets')
+        ->select(DB::raw('tickets.created_at as created_at,
+  ticket_subjects.subject_name as subject,
+  tickets.problem as problem,
+  ticket_status.status_name as status,
+  users.firstname as firstname,
+  tickets.fax_id as fax_id,
+  tickets.channel_id as channel_id,
+  ticket_channels.channel_name as channel'))
+        ->leftJoin('ticket_channels', 'tickets.channel_id', '=', 'ticket_channels.channel_id')
+        ->leftJoin('ticket_status', 'tickets.status_id', '=', 'ticket_status.status_id')
+        ->leftJoin('ticket_subjects', 'tickets.subject_id', '=', 'ticket_subjects.subject_id')
+        ->leftJoin('users', 'tickets.created_by', '=', 'users.id')
+        ->get();
+
+    //    ->where('status', '<>', 1)
+    //    ->groupBy('status')
+    //    ->get();
+
 
     return View::make('home')->with('tickets', $tickets);
     //return View::make('home')->with('subjects', $subjects);
