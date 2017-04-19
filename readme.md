@@ -14,5 +14,6 @@ $ composer update
 $ composer install
 // config database at app/config/database.php
 $ php artisan migrate
+$ php artisan db:seed
 $ php artisan serve
 ```
