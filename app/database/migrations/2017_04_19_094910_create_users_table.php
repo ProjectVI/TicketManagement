@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration {
 					$table->string('email', 100);
 					$table->string('username', 32);
 					$table->string('password', 64);
-					$table->string('remark', 30);
+					$table->string('remark', 30)->nullable();
 					$table->char('flag', 1);
 					$table->integer('team_id')->unsigned();
 					$table->integer('role_id')->unsigned();
