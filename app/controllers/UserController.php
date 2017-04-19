@@ -2,23 +2,9 @@
 
 class UserController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
   public function showLogin()
   {
-      // show the form
-      return View::make('login');
+      return View::make('auth/login');
   }
 
   public function doLogin()
@@ -50,14 +36,14 @@ class UserController extends BaseController {
 
               // validation successful!
               // redirect them to the secure section or whatever
-              return Redirect::to('users');
+              return Redirect::to('dashboard/tickets');
               // for now we'll just echo success (even though echoing in a controller is bad)
               echo 'SUCCESS!';
 
           } else {
 
               // validation not successful, send back to form
-              return Redirect::to('login');
+              return Redirect::to('auth/login');
 
           }
 
@@ -67,7 +53,7 @@ class UserController extends BaseController {
     public function doLogout()
     {
         Auth::logout(); // log the user out of our application
-        return Redirect::to('login'); // redirect the user to the login screen
+        return Redirect::to('auth/login'); // redirect the user to the login screen
     }
 
 }

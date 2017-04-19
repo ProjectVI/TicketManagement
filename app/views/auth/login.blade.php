@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layout/layout')
 
 @section('content')
-    {{ Form::open(array('url' => 'login')) }}
+    {{ Form::open(array('url' => 'auth/login')) }}
     <h1>Login</h1>
 
     <!-- if there are login errors, show them here -->
@@ -12,7 +12,7 @@
 
     <p>
         {{ Form::label('username', 'Username') }}
-        {{ Form::text('username', Input::old('username'), array('placeholder' => 'awesome')) }}
+        {{ Form::text('username', Input::old('username'), array('placeholder' => '')) }}
     </p>
 
     <p>

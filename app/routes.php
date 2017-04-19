@@ -16,12 +16,14 @@ Route::get('/', function()
 		return View::make('hello');
 });
 
-// Route::get('users', 'UserController@getIndex');
-Route::get('users', function()
+Route::group(array('prefix' => 'auth'), function()
 {
-    return View::make('users');
+		Route::get('login', array('uses' => 'UserController@showLogin'));
+		Route::post('login', array('uses' => 'UserController@doLogin'));
+		Route::get('logout', array('uses' => 'UserController@doLogout'));
 });
 
-Route::get('login', array('uses' => 'UserController@showLogin'));
-Route::post('login', array('uses' => 'UserController@doLogin'));
-Route::get('logout', array('uses' => 'UserController@doLogout'));
+Route::group(array('prefix' => 'dashboard'), function()
+{
+		Route::get('tickets', array('uses' => 'TicketController@showTickets'));
+});
