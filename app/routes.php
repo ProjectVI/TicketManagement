@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+		return View::make('hello');
 });
+
+// Route::get('users', 'UserController@getIndex');
+Route::get('users', function()
+{
+    return View::make('users');
+});
+
+Route::get('login', array('uses' => 'UserController@showLogin'));
+Route::post('login', array('uses' => 'UserController@doLogin'));
+Route::get('logout', array('uses' => 'UserController@doLogout'));
