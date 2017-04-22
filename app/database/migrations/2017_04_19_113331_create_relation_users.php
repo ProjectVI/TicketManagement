@@ -29,7 +29,7 @@ class CreateRelationUsers extends Migration {
 	 */
 	public function down()
 	{
-		//
+		
 	}
 
 }

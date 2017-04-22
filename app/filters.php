@@ -43,7 +43,61 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest('auth/login');
+		}
+	}
+});
+
+Route::filter('admin', function()
+{
+	if (Auth::check())
+	{
+		if (Auth::user()->role->name != 'Admin')
+		{
+			if (Request::ajax())
+			{
+				return Response::make('Unauthorized', 401);
+			}
+			else
+			{
+				return Redirect::guest('auth/login');
+			}
+		}
+	}
+});
+
+Route::filter('staff', function()
+{
+	if (Auth::check())
+	{
+		if (Auth::user()->role->name != 'Staff')
+		{
+			if (Request::ajax())
+			{
+				return Response::make('Unauthorized', 401);
+			}
+			else
+			{
+				return Redirect::guest('auth/login');
+			}
+		}
+	}
+});
+
+Route::filter('Manager', function()
+{
+	if (Auth::check())
+	{
+		if (Auth::user()->role->name != 'Manager')
+		{
+			if (Request::ajax())
+			{
+				return Response::make('Unauthorized', 401);
+			}
+			else
+			{
+				return Redirect::guest('auth/login');
+			}
 		}
 	}
 });

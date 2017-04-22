@@ -15,8 +15,7 @@ class CreateUsersTable extends Migration {
 			Schema::create('users', function(Blueprint $table)
       {
 					$table->increments('id')->unique();
-					$table->string('firstname', 32);
-					$table->string('surname', 32);
+					$table->string('name', 32);
 					$table->string('email', 100);
 					$table->string('username', 32);
 					$table->string('password', 64);
@@ -36,7 +35,9 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
+			DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 			Schema::dropIfExists('users');
+			DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }

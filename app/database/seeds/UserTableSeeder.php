@@ -37,8 +37,7 @@ class UserTableSeeder extends Seeder
 
         DB::table('users')->delete();
         User::create(array(
-            'firstname' => 'Werapat',
-            'surname'   => 'Threerawipark',
+            'name' => 'Werapat Threerawipark',
             'email'     => 'teeravipark@gmail.com',
             'username'  => 'teeravipark',
             'password'  => Hash::make('qwertyui'),
@@ -47,8 +46,7 @@ class UserTableSeeder extends Seeder
             'flag'      => 'A',
         ));
         User::create(array(
-           'firstname'=> 'admin',
-           'surname'  => 'projectvi',
+           'name'=> 'admin projectvi',
            'email'    => 'adminprojectvi@ait.ac.th',
            'username' => 'adminprojectvi',
            'password' => Hash::make('projectvi'),
@@ -57,8 +55,7 @@ class UserTableSeeder extends Seeder
            'flag'      => 'A',
        ));
        User::create(array(
-           'firstname'=> 'projectvi',
-           'surname'  => 'manager',
+           'name'=> 'manager projectvi',
            'email'    => 'managerprojectvi@ait.ac.th',
            'username' => 'managerprojectvi',
            'password' => Hash::make('projectvi'),
@@ -67,8 +64,7 @@ class UserTableSeeder extends Seeder
            'flag'      => 'A',
        ));
        User::create(array(
-           'firstname'=> 'projectvi',
-           'surname'  => 'staff',
+           'name'=> 'staff projectvi',
            'email'    => 'staffprojectvi@ait.ac.th',
            'username' => 'staffprojectvi',
            'password' => Hash::make('projectvi'),

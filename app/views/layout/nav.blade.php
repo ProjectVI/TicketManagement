@@ -8,17 +8,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ticket Management</a>
+      <a class="navbar-brand" href="/">Ticket Management</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="{{ URL::to('dashboard/tickets') }}">Tickets</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="{{ URL::to('admin/users') }}">Administration</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <p class="navbar-text">Signed in as Mark Otto</p>
+        <p class="navbar-text">Signed in as {{ Auth::user()->name }}</p>
         <li><a href="{{ URL::to('auth/logout') }}">Sign out</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

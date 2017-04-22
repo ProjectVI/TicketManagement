@@ -20,7 +20,7 @@ class UserController extends BaseController {
 
       // if the validator fails, redirect back to the form
       if ($validator->fails()) {
-          return Redirect::to('login')
+          return Redirect::to('auth/login')
               ->withErrors($validator) // send back all errors to the login form
               ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
       } else {
@@ -55,5 +55,6 @@ class UserController extends BaseController {
         Auth::logout(); // log the user out of our application
         return Redirect::to('auth/login'); // redirect the user to the login screen
     }
+
 
 }
