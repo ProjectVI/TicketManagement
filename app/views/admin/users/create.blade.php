@@ -1,7 +1,6 @@
-@extends('layout/layout')
-@extends('layout/nav')
+@extends('layout/admin')
 
-@section('content')
+@section('content2')
   <h1>Create a user</h1>
 
   {{ HTML::ul($errors->all()) }}
@@ -26,6 +25,16 @@
       <div class="form-group">
           {{ Form::label('password', 'Password') }}
           {{ Form::password('password', array('class' => 'form-control')) }}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('role', 'Role') }}
+        {{ Form::select('role', $roles, null, array('class' => 'form-control'))}}
+      </div>
+
+      <div class="form-group">
+        {{ Form::label('team', 'Team') }}
+        {{ Form::select('team', $teams, null, array('class' => 'form-control'))}}
       </div>
 
       {{ Form::submit('Create the user!', array('class' => 'btn btn-primary')) }}

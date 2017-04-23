@@ -1,7 +1,6 @@
-@extends('layout/layout')
-@extends('layout/nav')
+@extends('layout/admin')
 
-@section('content')
+@section('content2')
   <h1>Showing {{ $user->name }}</h1>
 
     <div class="jumbotron">

@@ -33,7 +33,10 @@ Route::group(array('prefix' => 'admin','before' => 'auth|admin'), function()
 		Route::get('users', array('uses' => 'AdminController@showUsers'));
 		Route::get('users/create', array('uses' => 'AdminController@createUser'));
 		Route::post('users', array('uses' => 'AdminController@storeUser'));
+		Route::post('users/search', array('uses' => 'AdminController@searchUsers'));
 		Route::get('users/{id}', array('uses' => 'AdminController@showUser'));
-		Route::get('users/{id}/edit', array('uses' => 'AdminController@editUser'));
-		Route::put('users/update/{id}', array('as' => 'users.update','uses' => 'AdminController@updateUser'));
+		Route::get('users/{id}/edit', array('as' => 'users.edit','uses' => 'AdminController@editUser'));
+		Route::put('users/{id}/update', array('as' => 'users.update','uses' => 'AdminController@updateUser'));
+		Route::get('users/{id}/ban', array('as' => 'users.ban','uses' => 'AdminController@banUser'));
+		Route::get('users/{id}/unban', array('as' => 'users.unban','uses' => 'AdminController@unbanUser'));
 });

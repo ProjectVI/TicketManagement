@@ -34,17 +34,14 @@ class UserController extends BaseController {
           // attempt to do the login
           if (Auth::attempt($userdata)) {
 
-              // validation successful!
-              // redirect them to the secure section or whatever
+              if (Auth::user()->flag != 'A') {
+                  Auth::logout();
+                  return Redirect::to('auth/login');
+              }
               return Redirect::to('dashboard/tickets');
-              // for now we'll just echo success (even though echoing in a controller is bad)
-              echo 'SUCCESS!';
 
           } else {
-
-              // validation not successful, send back to form
               return Redirect::to('auth/login');
-
           }
 
       }
@@ -52,8 +49,8 @@ class UserController extends BaseController {
 
     public function doLogout()
     {
-        Auth::logout(); // log the user out of our application
-        return Redirect::to('auth/login'); // redirect the user to the login screen
+        Auth::logout();
+        return Redirect::to('auth/login');
     }
 
 

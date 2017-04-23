@@ -1,8 +1,5 @@
-@extends('layout/layout')
-@extends('layout/nav')
-
-@section('content')
-
+@extends('layout/admin')
+@section('content2')
   <h1>Edit {{ $user->name }}</h1>
 
   {{ HTML::ul($errors->all()) }}
@@ -27,6 +24,16 @@
     <div class="form-group">
       {{ Form::label('password', 'Password') }}
       {{ Form::password('password', array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
+      {{ Form::label('role', 'Role') }}
+      {{ Form::select('role', $roles, $user->role->id, array('class' => 'form-control'))}}
+    </div>
+
+    <div class="form-group">
+      {{ Form::label('team', 'Team') }}
+      {{ Form::select('team', $teams, $user->team->id, array('class' => 'form-control'))}}
     </div>
 
     {{ Form::submit('Edit the user!', array('class' => 'btn btn-primary')) }}
