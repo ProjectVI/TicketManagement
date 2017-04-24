@@ -76,13 +76,13 @@ class TicketController extends BaseController {
       }
       $user = Input::get('user');
       if ($user != '') {
-        $user_id = User::where('name','LIKE','%'.$user.'%')->pluck('id');
+        $user_id = User::where('name','LIKE','%'.$user.'%')->lists('id');
         $tickets = $tickets->whereIn('created_by',$user_id);
       }
       $team = Input::get('team');
       if ($team != '') {
-        $user_id = User::where('team_id','=',$team)->pluck('id');
-        // $tickets = $tickets->whereIn('created_by',$user_id);
+        $user_id = User::where('team_id','=',$team)->lists('id');
+        $tickets = $tickets->whereIn('created_by',$user_id);
       }
       $organization = Input::get('organization');
       if ($organization != '') {
