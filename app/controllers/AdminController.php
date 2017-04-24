@@ -17,7 +17,6 @@ class AdminController extends BaseController {
 
   public function createUser()
   {
-
       $roles = Role::all();
       $selectRoles = array();
 
@@ -31,6 +30,7 @@ class AdminController extends BaseController {
       foreach($teams as $team) {
         $selectTeams[$team->id] = $team->name;
       }
+      
       return View::make('admin/users/create')
       ->with('roles',$selectRoles)
       ->with('teams',$selectTeams);

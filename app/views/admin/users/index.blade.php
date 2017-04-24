@@ -13,7 +13,7 @@
       <a class="btn btn-success" href="{{ URL::to('admin/users/create') }}">+ New user</a>
     </div>
     <div class="col-md-3" style="padding-top:20px"></div>
-    <div class="col-md-6" style="padding-top:20px;text-align:right">
+    <!-- <div class="col-md-6" style="padding-top:20px;text-align:right">
           {{ Form::open(array('url' => 'admin/users/search')) }}
           <div class="input-group">
               {{ Form::text('keyword', null, array('class' => 'form-control')) }}
@@ -22,9 +22,9 @@
               </span>
               </div>
           {{ Form::close() }}
-    </div>
+    </div> -->
     <div class="col-md-12" style="padding-top:20px">
-      <table class="table table-striped table-bordered">
+      <table id="users_table" class="table table-striped table-bordered">
         <thead>
             <tr>
                 <td>ID</td>

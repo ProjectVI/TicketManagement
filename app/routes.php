@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-		return View::make('hello');
+		return Redirect::to('dashboard/tickets');
 });
 
 Route::group(array('prefix' => 'auth'), function()
@@ -26,6 +26,13 @@ Route::group(array('prefix' => 'auth'), function()
 Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 {
 		Route::get('tickets', array('uses' => 'TicketController@showTickets'));
+		Route::post('tickets/search', array('uses' => 'TicketController@searchTickets'));
+		Route::post('tickets', array('as' => 'tickets.create','uses' => 'TicketController@storeTicket'));
+		Route::get('tickets/{id}', array('as' => 'tickets.show','uses' => 'TicketController@showTicket'));
+		Route::get('tickets/{id}/edit', array('as' => 'tickets.edit','uses' => 'TicketController@editTicket'));
+		Route::put('tickets/{id}/update', array('as' => 'tickets.update','uses' => 'TicketController@updateTicket'));
+		Route::get('tickets/{id}/ban', array('as' => 'tickets.ban','uses' => 'TicketController@banTicket'));
+		Route::get('tickets/{id}/unban', array('as' => 'tickets.unban','uses' => 'TicketController@unbanTicket'));
 });
 
 Route::group(array('prefix' => 'admin','before' => 'auth|admin'), function()

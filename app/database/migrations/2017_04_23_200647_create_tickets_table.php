@@ -23,6 +23,7 @@ class CreateTicketsTable extends Migration {
           $table->string('contact_phone', 20)->nullable();
           $table->string('contact_email', 50)->nullable();
           $table->string('channel_info', 15)->nullable();
+					$table->string('fax_id', 15)->nullable();
           $table->integer('channel_id')->unsigned();
           $table->integer('subject_id')->unsigned();
           $table->integer('status_id')->unsigned();
