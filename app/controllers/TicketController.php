@@ -32,7 +32,8 @@ class TicketController extends BaseController {
         $selectTeams[$team->id] = $team->name;
       }
 
-      $tickets = Ticket::orderBy('created_at', 'desc')->get();
+      $tickets = Ticket::orderBy('created_at', 'desc')
+                ->where('flag','!=','N')->get();
       return View::make('dashboard/tickets')
             ->with(compact('tickets'))
             ->with('channels',$selectChannels)
@@ -44,7 +45,8 @@ class TicketController extends BaseController {
   public function searchTickets()
   {
 
-      $tickets = Ticket::orderBy('created_at', 'desc');
+      $tickets = Ticket::orderBy('created_at', 'desc')
+                ->where('flag','!=','N');
       $subject_data = Input::get('subject');
       if ($subject_data != '') {
         $tickets = Ticket::where('subject_id','=',$subject_data+1);
@@ -78,7 +80,7 @@ class TicketController extends BaseController {
       }
       $user = Input::get('user');
       if ($user != '') {
-        $user_id = User::where('name','LIKE','%'.$user.'%')->lists('id');
+        $user_id = User::where('username','LIKE','%'.$user.'%')->lists('id');
         $tickets = $tickets->whereIn('created_by',$user_id);
       }
       $team = Input::get('team');

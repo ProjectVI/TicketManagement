@@ -46,12 +46,12 @@
                 <td>{{ $value->updated_at }}</td>
                 <td>{{ $value->flag }}</td>
                 <td>
-                    <a class="btn btn-small btn-success" href="{{ route('users.show', $value->id) }}">S</a>
-                    <a class="btn btn-small btn-info" href="{{ route('users.edit', $value->id) }}">E</a>
+                    <a class="btn btn-small btn-primary" href="{{ route('users.show', $value->id) }}"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="btn btn-small btn-info" href="{{ route('users.edit', $value->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     @if ($value->flag == 'A')
-                        <a class="btn btn-small btn-danger" href="{{ route('users.ban', $value->id) }}">B</a>
+                        <a class="btn btn-small btn-danger" href="{{ route('users.ban', $value->id) }}"><i class="fa fa-minus" aria-hidden="true"></i></a>
                     @else
-                        <a class="btn btn-small btn-danger" href="{{ route('users.unban', $value->id) }}">U</a>
+                        <a class="btn btn-small btn-success" href="{{ route('users.unban', $value->id) }}"><i class="fa fa-plus" aria-hidden="true"></i></a>
                     @endif
                     <!-- <a class="btn btn-small btn-info" href="{{ URL::to('admin/users/' . $value->id . '/edit') }}">Edit this Nerd</a> -->
                 </td>

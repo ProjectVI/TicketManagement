@@ -152,7 +152,7 @@
     <div id="panel3" class="panel-collapse collapse">
       <div class="panel-body">
           {{ Form::open(array('url' => 'dashboard/tickets')) }}
-          <h2 class="panel-title">
+          <h2 class="panel-title" id="title">
               <b>Ticket Form</b>
           </h2>
           <!-- table body -->
@@ -320,7 +320,7 @@
   <table id="tickets_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <td>ID</td>
+            <td style="display:none;">ID</td>
             <td>Created at</td>
             <td>Subject</td>
             <td>Problem</td>
@@ -335,24 +335,27 @@
     <tbody>
     @foreach($tickets as $key => $ticket)
         <tr>
-            <td>{{ $ticket->id }}</td>
+            <td style="display:none;">{{ $ticket->id }}</td>
             <td>{{ $ticket->created_at }}</td>
             <td>{{ $ticket->subject->name }}</td>
             <td>{{ $ticket->problem }}</td>
             <td>{{ $ticket->status->name }}</td>
-            <td>{{ $ticket->created_by()->first()->name }}</td>
-            <td>{{ $ticket->fax_id }}</td>
+            <td>{{ $ticket->created_by()->first()->username }}</td>
+            <td><a href="https://faxth.thnic.co.th/fax/show_fax.php?faxid={{ $ticket->fax_id }}">{{ $ticket->fax_id }}</a></td>
             <td>{{ $ticket->channel->name }}</td>
-            <td>{{ $ticket->channel_info }}</td>
+            @if ($ticket->channel->name == 'Chat')
+              <td><a href="https://chat.thnic.co.th/index.php/site_admin/chat/single/{{ $ticket->channel_info }}">{{ $ticket->channel_info }}</a></td>
+            @elseif ($ticket->channel->name == 'Email')
+              <td><a href="https://mailsys.thnic.co.th/supportcenter/client/index.php#{{ $ticket->channel_info }}">{{ $ticket->channel_info }}</a></td>
+            @else
+              <td>{{ $ticket->channel_info }}</td>
+            @endif
             <td>
-
-                <a class="details-control btn btn-small btn-success">Show</a>
-                <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" >Edit</a>
-                @if ($ticket->flag == 'A')
-                    <a class="btn btn-small btn-danger" href="{{ route('tickets.ban', $ticket->id) }}">Inactive</a>
-                @else
-                    <a class="btn btn-small btn-danger" href="{{ route('tickets.unban', $ticket->id) }}">Active</a>
-                @endif
+                {{ Form::open(['id' => "delete_".$ticket->id,'method' => 'GET', 'style' => 'margin:0', 'route' => ['tickets.ban', $ticket->id]]) }}
+                    <a class="details-control btn btn-small btn-primary"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a onclick="confirmDelete({{ $ticket->id }})" class="delete-ticket btn btn-small btn-danger" ><i class="fa fa-minus" aria-hidden="true"></i></a>
+                {{ Form::close() }}
             </td>
         </tr>
     @endforeach
@@ -434,6 +437,26 @@
             '</tr>'+
         '</table>';
     }
+    function confirmDelete(id)
+    {
+
+        $.confirm({
+          title: 'Delete Ticket',
+          content: "This ticket will be deleted and you'll no longer be able to find it.",
+          buttons: {
+              delete: function () {
+                  $('#delete_'+id).submit();
+              },
+              cancel: function () {
+
+              },
+          },
+          onContentReady: function () {
+              $("div .jconfirm-box.jconfirm-hilight-shake.jconfirm-type-default.jconfirm-type-animated").css('margin-top','50%');
+          },
+        });
+
+    }
     $(document).ready(function() {
         $('tbody, a, .ticket').on('click', function () {
           var id = this.id;
@@ -442,6 +465,7 @@
              type:'GET',
              success:function(data){
                  var obj = JSON.parse(data);
+                 $("#panel3 h2").html("<b>Ticket Form (edit)</b>");
                  $("#panel3, select #subject").val(obj.subject);
                  $("#panel3, select #channel").val(obj.channel);
                  $("#panel3, select #status").val(obj.status);

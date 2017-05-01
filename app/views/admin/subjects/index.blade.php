@@ -35,11 +35,11 @@
                 <td>{{ $value->flag }}</td>
                 <td>
                     <!-- <a class="btn btn-small btn-success" href="{{ route('subjects.show', $value->id) }}">S</a> -->
-                    <a class="btn btn-small btn-info" href="{{ route('subjects.edit', $value->id) }}">E</a>
+                    <a class="btn btn-small btn-info" href="{{ route('subjects.edit', $value->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     @if ($value->flag == 'A')
-                        <a class="btn btn-small btn-danger" href="{{ route('subjects.ban', $value->id) }}">B</a>
+                        <a class="btn btn-small btn-danger" href="{{ route('subjects.ban', $value->id) }}"><i class="fa fa-minus" aria-hidden="true"></i></a>
                     @else
-                        <a class="btn btn-small btn-danger" href="{{ route('subjects.unban', $value->id) }}">U</a>
+                        <a class="btn btn-small btn-success" href="{{ route('subjects.unban', $value->id) }}"><i class="fa fa-plus" aria-hidden="true"></i></a>
                     @endif
                 </td>
             </tr>

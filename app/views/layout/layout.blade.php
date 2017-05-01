@@ -6,10 +6,13 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/simple-sidebar.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery-confirm.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
         <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('assets/js/dataTables.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery-confirm.min.js') }}"></script>
         <script>
             $(document).ready(function() {
                 $.fn.goTo = function() {
@@ -29,7 +32,7 @@
                 $('#accordion').on('show.bs.collapse', function () {
                     $('#accordion .in').collapse('hide');
                 });
-                
+
                 $('#users_table').DataTable();
                 $('#subjects_table').DataTable();
                 $('#status_table').DataTable();
