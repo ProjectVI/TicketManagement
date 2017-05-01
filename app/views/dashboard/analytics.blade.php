@@ -12,7 +12,13 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-      <h1>Analytic</h1>
+      <h1>Analytics</h1>
+      {{ $a1 }}
+      {{ $a2 }}
+      {{ $a3 }}
+      {{ $a4 }}
+      {{ $a5 }}
+      {{ $a6 }}
   </div>
 </div>
 @stop

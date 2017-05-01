@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="{{ URL::to('dashboard/tickets') }}">Tickets</a></li>
-        <li><a href="{{ URL::to('dashboard/analytic') }}">Analytics</a></li>
+        <li><a href="{{ URL::to('dashboard/analytics') }}">Analytics</a></li>
         <li><a href="{{ URL::to('admin/users') }}">Administration</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
