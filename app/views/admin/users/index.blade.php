@@ -28,7 +28,7 @@
         <thead>
             <tr>
                 <td>ID</td>
-                <td>Name</td>
+                <td>Username</td>
                 <td>Role</td>
                 <td>Create Date</td>
                 <td>Update Date</td>
@@ -40,7 +40,7 @@
         @foreach($users as $key => $value)
             <tr>
                 <td>{{ $value->id }}</td>
-                <td>{{ $value->name }}</td>
+                <td>{{ $value->username }}</td>
                 <td>{{ $value->role->name }}</td>
                 <td>{{ $value->created_at }}</td>
                 <td>{{ $value->updated_at }}</td>

@@ -335,7 +335,7 @@
     <tbody>
     @foreach($tickets as $key => $ticket)
         <tr>
-            <td style="display:none;">{{ $ticket->id }}</td>
+            <td style="display:none;">{{ $key }}</td>
             <td>{{ $ticket->created_at }}</td>
             <td>{{ $ticket->subject->name }}</td>
             <td>{{ $ticket->problem }}</td>
@@ -421,11 +421,11 @@
             '</tr>'+
             '<tr>'+
                 '<td>Created_by: </td>'+
-                '<td>'+d.created_by+'</td>'+
+                '<td>'+d.created_by.username+'</td>'+
             '</tr>'+
             '<tr>'+
                 '<td>Updated_by: </td>'+
-                '<td>'+d.updated_by+'</td>'+
+                '<td>'+d.updated_by.username+'</td>'+
             '</tr>'+
             '<tr>'+
                 '<td>Created_at: </td>'+
@@ -494,6 +494,7 @@
              var row = table.row( tr );
              var id = row.data()[0];
              var ticket = {{ json_encode($tickets) }};
+             console.log(ticket);
              if ( row.child.isShown() ) {
                  row.child.hide();
                  tr.removeClass('shown');

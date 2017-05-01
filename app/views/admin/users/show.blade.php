@@ -10,6 +10,7 @@
             <strong>Team:</strong> {{ $user->team->name }}<br>
             <strong>Flag:</strong> {{ $user->flag }}
         </p>
+        <a class="btn btn-primary" href='{{ URL::previous() }}'>Back</a>
     </div>
 
   </div>
