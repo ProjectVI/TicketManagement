@@ -11,8 +11,13 @@
         <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('assets/js/dataTables.bootstrap.min.js') }}"></script>
         <script>
-            //button Hide & Insert button
             $(document).ready(function() {
+                $.fn.goTo = function() {
+                     $('html, body').animate({
+                         scrollTop: $(this).offset().top + 'px'
+                     }, 'fast');
+                     return this; // for chaining...
+                }
                 $(".openpanel").on("click", function() {
                     $("#panel3").collapse('show');
                 });
@@ -24,8 +29,12 @@
                 $('#accordion').on('show.bs.collapse', function () {
                     $('#accordion .in').collapse('hide');
                 });
-                $('#tickets_table').DataTable();
+                
                 $('#users_table').DataTable();
+                $('#subjects_table').DataTable();
+                $('#status_table').DataTable();
+                $('#teams_table').DataTable();
+                $('#channels_table').DataTable();
             } );
         </script>
     </head>

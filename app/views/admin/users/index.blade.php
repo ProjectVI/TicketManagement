@@ -46,12 +46,12 @@
                 <td>{{ $value->updated_at }}</td>
                 <td>{{ $value->flag }}</td>
                 <td>
-                    <!-- <a class="btn btn-small btn-success" href="{{ URL::to('admin/users/' . $value->id) }}">Show</a> -->
-                    <a class="btn btn-small btn-info" href="{{ route('users.edit', $value->id) }}">Edit</a>
+                    <a class="btn btn-small btn-success" href="{{ route('users.show', $value->id) }}">S</a>
+                    <a class="btn btn-small btn-info" href="{{ route('users.edit', $value->id) }}">E</a>
                     @if ($value->flag == 'A')
-                        <a class="btn btn-small btn-danger" href="{{ route('users.ban', $value->id) }}">Ban</a>
+                        <a class="btn btn-small btn-danger" href="{{ route('users.ban', $value->id) }}">B</a>
                     @else
-                        <a class="btn btn-small btn-danger" href="{{ route('users.unban', $value->id) }}">Unban</a>
+                        <a class="btn btn-small btn-danger" href="{{ route('users.unban', $value->id) }}">U</a>
                     @endif
                     <!-- <a class="btn btn-small btn-info" href="{{ URL::to('admin/users/' . $value->id . '/edit') }}">Edit this Nerd</a> -->
                 </td>

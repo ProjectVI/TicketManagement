@@ -1,21 +1,21 @@
 <?php
 
-class AdminController extends BaseController {
+class AdminUserController extends BaseController {
 
-  public function showUsers()
+  public function shows()
   {
       $users = User::all();
 	    return View::make('admin/users/index')->with(compact('users'));
   }
 
-  public function searchUsers()
+  public function search()
   {
       $keyword = Input::get('keyword');
       $users = User::where('name', 'LIKE' , '%'.$keyword.'%')->get();
 	    return View::make('admin/users/index')->with(compact('users'));
   }
 
-  public function createUser()
+  public function create()
   {
       $roles = Role::all();
       $selectRoles = array();
@@ -30,13 +30,13 @@ class AdminController extends BaseController {
       foreach($teams as $team) {
         $selectTeams[$team->id] = $team->name;
       }
-      
+
       return View::make('admin/users/create')
       ->with('roles',$selectRoles)
       ->with('teams',$selectTeams);
   }
 
-  public function storeUser()
+  public function store()
   {
       $rules = array(
           'name'       => 'required',
@@ -68,13 +68,13 @@ class AdminController extends BaseController {
       }
   }
 
-  public function showUser($id)
+  public function show($id)
   {
       $user = User::find($id);
       return View::make('admin/users/show')->with(compact('user'));
   }
 
-  public function editUser($id)
+  public function edit($id)
   {
       $roles = Role::all();
       $selectRoles = array();
@@ -97,7 +97,7 @@ class AdminController extends BaseController {
         ->with('teams',$selectTeams);
   }
 
-  public function updateUser($id)
+  public function update($id)
   {
       $rules = array(
           'name'       => 'required',
@@ -130,7 +130,7 @@ class AdminController extends BaseController {
       }
   }
 
-  public function banUser($id)
+  public function ban($id)
   {
       $user = User::find($id);
       $user->flag = 'N';
@@ -140,7 +140,7 @@ class AdminController extends BaseController {
       return Redirect::to('admin/users');
   }
 
-  public function unbanUser($id)
+  public function unban($id)
   {
       $user = User::find($id);
       $user->flag = 'A';

@@ -3,13 +3,16 @@
 
 @section('content')
 <!-- search criteria -->
+<div class="row">
+  @if (Session::has('message'))
+    <div class="col-md-12">
+      <div class="alert alert-info">{{ Session::get('message') }}</div>
+    </div>
+  @endif
+</div>
 <div class="col-md-12">
     <h1>Tickets</h1><br>
-    @if (Session::has('message'))
-      <div class="col-md-12">
-        <div class="alert alert-info">{{ Session::get('message') }}</div>
-      </div>
-    @endif
+
     <div class="panel panel-default">
         <div class="panel-heading ">
             <h4 class="panel-title">
@@ -24,16 +27,17 @@
                         <div class="form-group">
                               {{ Form::label('subject', 'Subject', array('class'=>'col-md-2 control-label')) }}
                             <div class="col-md-10">
-                              {{-- Form::select('subject', array_merge(['' => 'Please Select'], $subjects), null, array('class' => 'form-control')) --}}
-                              {{ Form::select('subject', $subjects, null, array('class' => 'form-control')) }}
+                              {{ Form::select('subject', array_merge(['' => 'Select'], $subjects), null, array('class' => 'form-control')) }}
+                              {{-- Form::select('subject', $subjects, null, array('class' => 'form-control')) --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            {{ Form::label('channel', 'Channel', array('class'=>'col-md-5 control-label')) }}
+                              {{ Form::label('channel', 'Channel', array('class'=>'col-md-5 control-label')) }}
                             <div class="col-md-7">
-                              {{ Form::select('channel', $channels, null, array('class' => 'form-control')) }}
+                              {{ Form::select('channel', array_merge(['' => 'Select'], $channels), null, array('class' => 'form-control')) }}
+                              {{-- Form::select('channel', $channels, null, array('class' => 'form-control')) --}}
                             </div>
                         </div>
                     </div>
@@ -50,7 +54,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            {{ Form::label('domain', 'Domain', array('class'=>'col-md-2 control-label')) }}
+                              {{ Form::label('domain', 'Domain', array('class'=>'col-md-2 control-label')) }}
                             <div class="col-md-10">
                               {{ Form::text('domain', '', array('class' => 'form-control')) }}
                             </div>
@@ -58,9 +62,10 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            {{ Form::label('status', 'Status', array('class'=>'col-md-5 control-label')) }}
+                              {{ Form::label('status', 'Status', array('class'=>'col-md-5 control-label')) }}
                             <div class="col-md-7">
-                              {{ Form::select('status', $status, null, ['class' => 'form-control' ]) }}
+                              {{ Form::select('status', array_merge(['' => 'Select'], $status), null, array('class' => 'form-control')) }}
+                              {{-- Form::select('status', $status, null, ['class' => 'form-control' ]) --}}
                             </div>
                         </div>
                     </div>
@@ -93,9 +98,10 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            {{ Form::label('team', 'Team', array('class'=>'col-md-5 control-label')) }}
+                              {{ Form::label('team', 'Team', array('class'=>'col-md-5 control-label')) }}
                             <div class="col-md-7">
-                              {{ Form::select('team', $teams,  null, ['class' => 'form-control' ]) }}
+                              {{ Form::select('team', array_merge(['' => 'Select'], $teams), null, array('class' => 'form-control')) }}
+                              {{-- Form::select('team', $teams,  null, ['class' => 'form-control' ]) --}}
                             </div>
                         </div>
                     </div>
@@ -110,18 +116,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3" style="padding:0">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            {{ Form::label('created_from', 'Created Date', array('class'=>'col-md-5 control-label')) }}
-                            <div class="col-md-7">
+                            {{ Form::label('created_from', 'Created Date', array('class'=>'col-md-3 control-label')) }}
+                            <div class="col-md-4">
                               <input class="form-control" type="date" name="created_from" id="created_from"/>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            {{ Form::label('created_to', 'to', array('class'=>'col-md-5 control-label')) }}
-                            <div class="col-md-7">
+                            {{ Form::label('created_to', 'to', array('class'=>'col-md-1 control-label')) }}
+                            <div class="col-md-4">
                               <input class="form-control" type="date" name="created_to" id="created_to"/>
                             </div>
                         </div>
@@ -139,7 +141,10 @@
 </div>
 <div class="col-md-12" style="text-align:right">
     <button style="margin-left:20px" type="button" class="btn btn-primary openpanel accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion" href="#panel3">+ Insert</button>
-    <button id="button" class="btn btn-md btn-warning clearfix pull-right"><span class="fa fa-download"></span>Export CSV</button>
+    {{ Form::open(array('route' => array('tickets.export', $tickets))) }}
+    <button type="submit" class="btn btn-md btn-warning clearfix pull-right">Export CSV</button>
+    {{ Form::close() }}
+
 </div>
 <!-- operation: form -->
 <div class="col-md-12">
@@ -147,7 +152,6 @@
     <div id="panel3" class="panel-collapse collapse">
       <div class="panel-body">
           {{ Form::open(array('url' => 'dashboard/tickets')) }}
-
           <h2 class="panel-title">
               <b>Ticket Form</b>
           </h2>
@@ -302,7 +306,7 @@
             <div class="form-group text-center">
                 {{ Form::reset('Clear', array('class' => 'btn btn-default')) }}
                 <button type="button" class="btn btn-default closepanel accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel3">Hide</button>
-                {{ Form::submit('Create', array('class' => 'btn btn-success')) }}
+                {{ Form::submit('Submit', array('class' => 'btn btn-success')) }}
             </div>
 
             {{ Form::close() }}
@@ -316,6 +320,7 @@
   <table id="tickets_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
+            <td>ID</td>
             <td>Created at</td>
             <td>Subject</td>
             <td>Problem</td>
@@ -330,6 +335,7 @@
     <tbody>
     @foreach($tickets as $key => $ticket)
         <tr>
+            <td>{{ $ticket->id }}</td>
             <td>{{ $ticket->created_at }}</td>
             <td>{{ $ticket->subject->name }}</td>
             <td>{{ $ticket->problem }}</td>
@@ -339,8 +345,9 @@
             <td>{{ $ticket->channel->name }}</td>
             <td>{{ $ticket->channel_info }}</td>
             <td>
-                <a class="btn btn-small btn-success" href="{{ route('tickets.show', $ticket->id) }}">Show</a>
-                <a class="btn btn-small btn-info" href="{{ route('tickets.edit', $ticket->id) }}">Edit</a>
+
+                <a class="details-control btn btn-small btn-success">Show</a>
+                <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" >Edit</a>
                 @if ($ticket->flag == 'A')
                     <a class="btn btn-small btn-danger" href="{{ route('tickets.ban', $ticket->id) }}">Inactive</a>
                 @else
@@ -353,4 +360,126 @@
   </table>
 </div>
 <!-- search result -->
+<script>
+    function format ( d ) {
+        // `d` is the original data object for the row
+        return '<table class="table table-bordered" cellpadding="5" cellspacing="0" border="0">'+
+            '<tr>'+
+                '<td>Subject: </td>'+
+                '<td>'+d.subject.name+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Domain: </td>'+
+                '<td>'+d.domain+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Problem: </td>'+
+                '<td>'+d.problem+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Organization: </td>'+
+                '<td>'+d.organization+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Channel: </td>'+
+                '<td>'+d.channel.name+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Channel ID: </td>'+
+                '<td>'+d.channel_info+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Status: </td>'+
+                '<td>'+d.status.name+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Fax ID: </td>'+
+                '<td>'+d.fax_id+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Contact: </td>'+
+                '<td>'+d.contact_name+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Phone: </td>'+
+                '<td>'+d.contact_phone+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Mail: </td>'+
+                '<td>'+d.contact_email+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Answer: </td>'+
+                '<td>'+d.answer+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Remark: </td>'+
+                '<td>'+d.remark+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Created_by: </td>'+
+                '<td>'+d.created_by+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Updated_by: </td>'+
+                '<td>'+d.updated_by+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Created_at: </td>'+
+                '<td>'+d.created_at+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Updated_at: </td>'+
+                '<td>'+d.updated_at+'</td>'+
+            '</tr>'+
+        '</table>';
+    }
+    $(document).ready(function() {
+        $('tbody, a, .ticket').on('click', function () {
+          var id = this.id;
+          $.ajax({
+             url: '/dashboard/tickets/'+id+'/json',
+             type:'GET',
+             success:function(data){
+                 var obj = JSON.parse(data);
+                 $("#panel3, select #subject").val(obj.subject);
+                 $("#panel3, select #channel").val(obj.channel);
+                 $("#panel3, select #status").val(obj.status);
+                 $("#panel3, [name='domain']").val(obj.domain);
+                 $("#panel3, [name='problem']").val(obj.problem);
+                 $("#panel3, [name='organization']").val(obj.organization);
+                 $("#panel3, [name='answer']").val(obj.answer);
+                 $("#panel3, [name='fax_id']").val(obj.fax_id);
+                 $("#panel3, [name='channel_info']").val(obj.channel_info);
+                 $("#panel3, [name='contact_name']").val(obj.contact_name);
+                 $("#panel3, [name='contact_phone']").val(obj.contact_phone);
+                 $("#panel3, [name='contact_email']").val(obj.contact_email);
+                 $("#panel3, [name='remark']").val(obj.remark);
+
+                //  $("#panel3, form").attr("method", "PUT");
+                 $("#panel3, form").attr("action", "/dashboard/tickets/"+obj.id+"/update");
+
+                 $('#panel3').collapse('show');
+                 $('#panel3').goTo();
+             }
+           });
+        });
+        var table = $('#tickets_table').DataTable();
+        $('#tickets_table tbody').on('click', 'a.details-control', function () {
+             var tr = $(this).closest('tr');
+             var row = table.row( tr );
+             var id = row.data()[0];
+             var ticket = {{ json_encode($tickets) }};
+             if ( row.child.isShown() ) {
+                 row.child.hide();
+                 tr.removeClass('shown');
+             }
+             else {
+                 row.child( format(ticket[id]) ).show();
+                 tr.addClass('shown');
+             }
+         });
+    });
+</script>
 @stop
+<!-- search criteria -->
