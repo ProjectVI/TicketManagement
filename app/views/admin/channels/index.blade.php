@@ -32,7 +32,11 @@
                 <td>{{ $value->name }}</td>
                 <td>{{ $value->created_at }}</td>
                 <td>{{ $value->updated_at }}</td>
-                <td>{{ $value->flag }}</td>
+                @if ($value->flag == 'A')
+                  <td>Active</td>
+                @elseif ($value->flag == 'N')
+                  <td>Non-Active</td>
+                @endif
                 <td>
                     <!-- <a class="btn btn-small btn-success" href="{{ route('channels.show', $value->id) }}">S</a> -->
                     <a class="btn btn-small btn-info" href="{{ route('channels.edit', $value->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>

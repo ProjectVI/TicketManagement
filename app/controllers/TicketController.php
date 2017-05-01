@@ -4,28 +4,28 @@ class TicketController extends BaseController {
 
   public function showTickets()
   {
-      $channels = Channel::all();
+      $channels = Channel::where('flag','!=','N')->get();
       $selectChannels = array();
 
       foreach($channels as $channel) {
         $selectChannels[$channel->id] = $channel->name;
       }
 
-      $subjects = Subject::all();
+      $subjects = Subject::where('flag','!=','N')->get();
       $selectSubjects = array();
 
       foreach($subjects as $subject) {
         $selectSubjects[$subject->id] = $subject->name;
       }
 
-      $status = Status::all();
+      $status = Status::where('flag','!=','N')->get();
       $selectStatus = array();
 
       foreach($status as $status_one) {
         $selectStatus[$status_one->id] = $status_one->name;
       }
 
-      $teams = Team::all();
+      $teams = Team::where('flag','!=','N')->get();
       $selectTeams = array();
 
       foreach($teams as $team) {
@@ -264,6 +264,12 @@ class TicketController extends BaseController {
       Excel::create('Tickets', function($excel) use($data) {
         $excel->sheet('Sheet1', function($sheet) use($data) {
             $sheet->fromArray($data);
+            $sheet->cell('J1', function($cell) {
+                $cell->setValue('channel_name');
+            });
+            $sheet->cell('A1', function($cell) {
+                $cell->setValue('id');
+            });
         });
       })->export('csv');
   }

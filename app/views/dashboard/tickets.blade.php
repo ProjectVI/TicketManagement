@@ -352,9 +352,9 @@
             @endif
             <td>
                 {{ Form::open(['id' => "delete_".$ticket->id,'method' => 'GET', 'style' => 'margin:0', 'route' => ['tickets.ban', $ticket->id]]) }}
-                    <a class="details-control btn btn-small btn-primary"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a class="details-control btn btn-small btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a onclick="confirmDelete({{ $ticket->id }})" class="delete-ticket btn btn-small btn-danger" ><i class="fa fa-minus" aria-hidden="true"></i></a>
+                    <a onclick="confirmDelete({{ $ticket->id }})" class="delete-ticket btn btn-small btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                 {{ Form::close() }}
             </td>
         </tr>
@@ -365,77 +365,87 @@
 <!-- search result -->
 <script>
     function format ( d ) {
-        // `d` is the original data object for the row
-        return '<table class="table table-bordered" cellpadding="5" cellspacing="0" border="0">'+
-            '<tr>'+
-                '<td>Subject: </td>'+
-                '<td>'+d.subject.name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Domain: </td>'+
-                '<td>'+d.domain+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Problem: </td>'+
-                '<td>'+d.problem+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Organization: </td>'+
-                '<td>'+d.organization+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Channel: </td>'+
-                '<td>'+d.channel.name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Channel ID: </td>'+
-                '<td>'+d.channel_info+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Status: </td>'+
-                '<td>'+d.status.name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Fax ID: </td>'+
-                '<td>'+d.fax_id+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Contact: </td>'+
-                '<td>'+d.contact_name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Phone: </td>'+
-                '<td>'+d.contact_phone+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Mail: </td>'+
-                '<td>'+d.contact_email+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Answer: </td>'+
-                '<td>'+d.answer+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Remark: </td>'+
-                '<td>'+d.remark+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Created_by: </td>'+
-                '<td>'+d.created_by.username+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Updated_by: </td>'+
-                '<td>'+d.updated_by.username+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Created_at: </td>'+
-                '<td>'+d.created_at+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Updated_at: </td>'+
-                '<td>'+d.updated_at+'</td>'+
-            '</tr>'+
-        '</table>';
+        return '<div class="row">'+
+                    '<div class="col-md-12">'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Subject:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.subject.name+'</h5>'+
+                      '</div>'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Problem:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.problem+'</h5>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="row">'+
+                    '<div class="col-md-12">'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Domain:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.domain+'</h5>'+
+                      '</div>'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Contact:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.contact_name+'</h5>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="row">'+
+                    '<div class="col-md-12">'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Organization:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.organization+'</h5>'+
+                      '</div>'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Phone:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-2">'+
+                        '<h5>'+d.contact_phone+'</h5>'+
+                      '</div>'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Mail:</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-2">'+
+                        '<h5>'+d.contact_email+'</h5>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>'+
+                  '<div class="row">'+
+                    '<div class="col-md-12">'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Answer:<br>Resolution</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.answer+'</h5>'+
+                      '</div>'+
+                      '<div class="col-md-1">'+
+                        '<h5><b>Suggestion:<br>Remark</b></h5>'+
+                      '</div>'+
+                      '<div class="col-md-5">'+
+                        '<h5>'+d.remark+'</h5>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>'+
+                  '<hr>'+
+                  '<div class="row">'+
+                    '<div class="col-md-12">'+
+                      '<div class="col-md-6">'+
+                        '<h6><b>Created by: '+d.created_by.username+' Created at: '+d.created_at+'</b></h6>'+
+                      '</div>'+
+                      '<div class="col-md-6 text-right">'+
+                        '<h6><b>Updated by: '+d.updated_by.username+' Updated at: '+d.updated_at+'</b></h6>'+
+                      '</div>'+
+                    '</div>'+
+                  '</div>';
     }
     function confirmDelete(id)
     {

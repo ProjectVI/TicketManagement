@@ -25,6 +25,7 @@ Route::group(array('prefix' => 'auth'), function()
 
 Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 {
+		Route::get('analytic', array('uses' => 'AnalyticController@index'));
 		Route::get('tickets', array('uses' => 'TicketController@showTickets'));
 		Route::post('tickets', array('as' => 'tickets.create','uses' => 'TicketController@storeTicket'));
 		Route::post('tickets/search', array('uses' => 'TicketController@searchTickets'));
