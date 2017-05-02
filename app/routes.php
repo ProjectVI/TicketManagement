@@ -40,6 +40,7 @@ Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 Route::group(array('prefix' => 'dashboard'), function()
 {
 		Route::post('tickets/export/{data}', array('as' => 'tickets.export','uses' => 'TicketController@exportTickets'));
+        Route::post('analytics/export/{data}', array('as' => 'analytics.export','uses' => 'AnalyticController@exportReports'));
 });
 
 Route::group(array('prefix' => 'admin','before' => 'auth|admin'), function()
