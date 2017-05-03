@@ -25,22 +25,28 @@ Route::group(array('prefix' => 'auth'), function()
 
 Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 {
-		Route::get('analytics', array('uses' => 'AnalyticController@index'));
-		Route::get('tickets', array('uses' => 'TicketController@showTickets'));
-		Route::post('tickets', array('as' => 'tickets.create','uses' => 'TicketController@storeTicket'));
-		Route::post('tickets/search', array('uses' => 'TicketController@searchTickets'));
-		Route::get('tickets/{id}', array('as' => 'tickets.show','uses' => 'TicketController@showTicket'));
-		Route::get('tickets/{id}/json', array('uses' => 'TicketController@getTicket'));
-		Route::get('tickets/{id}/edit', array('as' => 'tickets.edit','uses' => 'TicketController@editTicket'));
-		Route::post('tickets/{id}/update', array('as' => 'tickets.update','uses' => 'TicketController@updateTicket'));
-		Route::get('tickets/{id}/ban', array('as' => 'tickets.ban','uses' => 'TicketController@banTicket'));
-		Route::get('tickets/{id}/unban', array('as' => 'tickets.unban','uses' => 'TicketController@unbanTicket'));
+		Route::group(array('prefix' => 'analytics'), function()
+		{
+				Route::get('/', array('uses' => 'AnalyticController@index'));
+				Route::post('/export', array('as' => 'analytics.export','uses' => 'AnalyticController@exportReports'));
+		});
+		Route::group(array('prefix' => 'tickets'), function()
+		{
+				Route::get('/', array('uses' => 'TicketController@showTickets'));
+				Route::post('/', array('as' => 'tickets.create','uses' => 'TicketController@storeTicket'));
+				Route::post('/search', array('uses' => 'TicketController@searchTickets'));
+				Route::get('/{id}', array('as' => 'tickets.show','uses' => 'TicketController@showTicket'));
+				Route::get('/{id}/json', array('uses' => 'TicketController@getTicket'));
+				Route::get('/{id}/edit', array('as' => 'tickets.edit','uses' => 'TicketController@editTicket'));
+				Route::post('/{id}/update', array('as' => 'tickets.update','uses' => 'TicketController@updateTicket'));
+				Route::get('/{id}/ban', array('as' => 'tickets.ban','uses' => 'TicketController@banTicket'));
+				Route::get('/{id}/unban', array('as' => 'tickets.unban','uses' => 'TicketController@unbanTicket'));
+		});
 });
 
 Route::group(array('prefix' => 'dashboard'), function()
 {
 		Route::post('tickets/export/{data}', array('as' => 'tickets.export','uses' => 'TicketController@exportTickets'));
-        Route::post('analytics/export/{data}', array('as' => 'analytics.export','uses' => 'AnalyticController@exportReports'));
 });
 
 Route::group(array('prefix' => 'admin','before' => 'auth|admin'), function()

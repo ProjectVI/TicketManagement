@@ -1,6 +1,5 @@
 @extends('layout/layout')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,6 +90,13 @@
 
 @section('content')
 <!-- search criteria -->
+<div class="row">
+  @if (Session::has('message'))
+    <div class="col-md-12">
+      <div class="alert alert-info">{{ Session::get('message') }}</div>
+    </div>
+  @endif
+</div>
 <header class="w3-container" >
     <h3><b><i class="fa fa-dashboard"></i> Overall Statistics</b></h3>
 </header>
@@ -166,33 +172,24 @@
 </div>
 </div>
 <div class="w3-row-padding w3-border w3-margin-bottom">
-    <span class="w3-xlarge">Staff Performance Report</span><br>
-
+    <span class="w3-xlarge"> Staff Performance Report</span><br>
         <div class="panel-body">
-            {{ Form::open(array('route' => array('analytics.export', $reports))) }}
-        <div class="form-group">
-            {{ Form::label('created_from', 'Period from', array('class'=>'col-md-3 control-label')) }}
-            <div class="w3-quarter">
-                <input class="form-control" type="date" name="created_from" id="created_from"/>
-            </div>
-            {{ Form::label('created_to', 'to', array('class'=>'col-md-1 control-label')) }}
-            <div class="w3-quarter">
-                <input class="form-control" type="date" name="created_to" id="created_to"/>
-            </div>
-
+            {{ HTML::ul($errors->all()) }}
+            {{ Form::open(array('route' => array('analytics.export'))) }}
+            <div class="form-group">
+                {{ Form::label('created_from', 'Period from', array('class'=>'col-md-3 control-label')) }}
+                <div class="w3-quarter">
+                    <input class="form-control" type="date" name="created_from" id="created_from"/>
+                </div>
+                {{ Form::label('created_to', 'to', array('class'=>'col-md-1 control-label')) }}
+                <div class="w3-quarter">
+                    <input class="form-control" type="date" name="created_to" id="created_to"/>
+                </div>
                 {{ Form::reset('Clear', array('class' => 'btn btn-default')) }}
-                {{ Form::submit('Search', array('class' => 'btn btn-primary')) }}
-
-        </div>
-
-
-
-
+                {{ Form::submit('Export', array('class' => 'btn btn-warning')) }}
+            </div>
             {{ Form::close() }}
         </div>
-
 </div>
-
-
 @stop
 <!-- search criteria -->

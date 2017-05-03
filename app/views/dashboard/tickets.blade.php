@@ -157,6 +157,8 @@
           </h2>
           <!-- table body -->
 
+          <br><br>
+          {{ HTML::ul($errors->all()) }}
           <br>
           <div class="row">
               <div class="col-md-1">

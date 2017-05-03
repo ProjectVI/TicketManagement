@@ -17,7 +17,7 @@ class AnalyticController extends BaseController {
                     ON tickets.created_by = users.id
                   INNER JOIN teams
                     ON users.team_id = teams.id
-                WHERE DATE(tickets.created_at) <= CURDATE()
+                WHERE DATE(tickets.created_at) = CURDATE()
                 GROUP BY teams.name;"));
 
       $chart3=array();
@@ -28,7 +28,7 @@ class AnalyticController extends BaseController {
       // (4) Today's Staff Performance
       $sql4 = DB::select(DB::raw("
                 SELECT users.username as staffname,
-                  ROUND((count(tickets.id)/(SELECT count(tickets.id) AS count 
+                  ROUND((count(tickets.id)/(SELECT count(tickets.id) AS count
                   FROM tickets
                   WHERE DATE(created_at) = CURDATE()) )*100,2) AS perf
                 FROM tickets
@@ -48,7 +48,7 @@ class AnalyticController extends BaseController {
                 FROM tickets
                   INNER JOIN ticket_subjects
                     ON tickets.subject_id = ticket_subjects.id
-                WHERE DATE(tickets.created_at) <= CURDATE()
+                WHERE DATE(tickets.created_at) = CURDATE()
                 GROUP BY ticket_subjects.name;"));
       $chart5=array();
       foreach ($sql5 as $result) {
@@ -63,7 +63,7 @@ class AnalyticController extends BaseController {
                 FROM tickets
                   INNER JOIN users
                     ON tickets.created_by = users.id
-                WHERE DATE(tickets.created_at) <= CURDATE()
+                WHERE DATE(tickets.created_at) = CURDATE()
                 GROUP BY users.name;"));
       $chart6=array();
       foreach ($sql6 as $result) {
@@ -91,21 +91,44 @@ class AnalyticController extends BaseController {
           ->with(compact('sql8'))
           ->with(compact('sql9'));
   }
-    public function exportReports($data)
-    {
-        /*
-        $data = json_decode($data,true);
-        Excel::create('Tickets', function($excel) use($data) {
-            $excel->sheet('Sheet1', function($sheet) use($data) {
-                $sheet->fromArray($data);
-                $sheet->cell('J1', function($cell) {
-                    $cell->setValue('channel_name');
-                });
-                $sheet->cell('A1', function($cell) {
-                    $cell->setValue('id');
-                });
-            });
-        })->export('csv');
-        */
-    }
+
+  //(7) Staff Performance Report
+  public function exportReports()
+  {
+      $rules = array(
+          'created_from'       => 'required',
+          'created_to'      => 'required',
+      );
+      $validator = Validator::make(Input::all(), $rules);
+
+      if ($validator->fails()) {
+          return Redirect::to('dashboard/analytics')
+              ->withErrors($validator)
+              ->withInput(Input::except('password'));
+      } else {
+          $created_from = Input::get('created_from');
+          $created_to = Input::get('created_to');
+          $results = DB::select(DB::raw("
+            SELECT DATE(tickets.created_at) AS DATE, users.name AS NAME,
+              ROUND((count(tickets.id)/(SELECT count(tickets.id) AS COUNT FROM tickets
+              WHERE DATE(created_at) = CURDATE()) )*100,2) AS PERFORMANCE
+            FROM tickets
+              INNER JOIN users
+                ON tickets.created_by = users.id
+            WHERE DATE(tickets.created_at) >= '".$created_from."'
+              AND DATE(tickets.created_at) <= '".$created_to."'
+            GROUP BY DATE(tickets.created_at),users.name;
+          "));
+          $data = json_decode(json_encode($results), True);
+          Excel::create('Performance Staffs', function($excel) use($data) {
+              $excel->sheet('Sheet1', function($sheet) use($data) {
+                  $sheet->fromArray($data);
+              });
+          })->export('csv');
+      }
+
+
+
+
+  }
 }
