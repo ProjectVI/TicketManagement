@@ -3,6 +3,7 @@
 @section('content')
   <div class="col-md-12" style="text-align:center;padding-top:100px">
     <img src="{{ asset('assets/images/Logo-THNIC-Flat-01.png') }}" style="width:50%" class="img-rounded">
+    {{ HTML::ul($errors->all()) }}
     {{ Form::open(array('url' => 'auth/login','class' => 'form-horizontal')) }}
     <!-- if there are login errors, show them here -->
     <div class="row">

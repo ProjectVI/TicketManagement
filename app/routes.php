@@ -23,6 +23,11 @@ Route::group(array('prefix' => 'auth'), function()
 		Route::get('logout', array('uses' => 'UserController@doLogout'));
 });
 
+Route::group(array('prefix' => 'dashboard'), function()
+{
+		Route::post('tickets/export/{data}', array('as' => 'tickets.export','uses' => 'TicketController@exportTickets'));
+});
+
 Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 {
 		Route::group(array('prefix' => 'analytics'), function()
@@ -42,11 +47,6 @@ Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 				Route::get('/{id}/ban', array('as' => 'tickets.ban','uses' => 'TicketController@banTicket'));
 				Route::get('/{id}/unban', array('as' => 'tickets.unban','uses' => 'TicketController@unbanTicket'));
 		});
-});
-
-Route::group(array('prefix' => 'dashboard'), function()
-{
-		Route::post('tickets/export/{data}', array('as' => 'tickets.export','uses' => 'TicketController@exportTickets'));
 });
 
 Route::group(array('prefix' => 'admin','before' => 'auth|admin'), function()

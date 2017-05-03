@@ -272,5 +272,6 @@ class TicketController extends BaseController {
             });
         });
       })->export('csv');
+      return Redirect::to('dashboard/tickets');
   }
 }
