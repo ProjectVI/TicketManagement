@@ -140,7 +140,7 @@
     </div>
 </div>
 <div class="col-md-12" style="text-align:right">
-    <button style="margin-left:20px" type="button" class="btn btn-primary openpanel accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion" href="#panel3">+ Insert</button>
+    <button id="insertButton" style="margin-left:20px" type="button" class="btn btn-primary openpanel accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion" href="#panel3">+ Insert</button>
     {{ Form::open(array('route' => array('tickets.export', $tickets))) }}
     <button type="submit" class="btn btn-md btn-warning clearfix pull-right">Export CSV</button>
     {{ Form::close() }}
@@ -168,7 +168,7 @@
               </div>
               <div class="col-md-5">
                   <div class="form-group">
-                      {{ Form::select('subject', $subjects, null, ['class' => 'form-control' ]) }}
+                      {{ Form::select('subject', $subjects, null, ['class' => 'form-control', 'id' => 'subjectSelectBox' ]) }}
                   </div>
               </div>
               <div class="col-md-1">
@@ -178,7 +178,7 @@
               </div>
               <div class="col-md-2">
                   <div class="form-group">
-                      {{ Form::select('channel', $channels, null, ['class' => 'form-control' ]) }}
+                      {{ Form::select('channel', $channels, null, ['class' => 'form-control', 'id' => 'channelSelectBox' ]) }}
                   </div>
               </div>
               <div class="col-md-1" style="padding-right:0">
@@ -211,7 +211,7 @@
               </div>
               <div class="col-md-2">
                   <div class="form-group">
-                      {{ Form::select('status', $status, null, ['class' => 'form-control' ]) }}
+                      {{ Form::select('status', $status, null, ['class' => 'form-control', 'id' => 'statusSelectBox' ]) }}
                   </div>
               </div>
               <div class="col-md-1">
@@ -307,7 +307,7 @@
 
             <div class="form-group text-center">
                 {{ Form::reset('Clear', array('class' => 'btn btn-default')) }}
-                <button type="button" class="btn btn-default closepanel accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel3">Hide</button>
+                <button id="hideButton" type="button" class="btn btn-default closepanel accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#panel3">Hide</button>
                 {{ Form::submit('Submit', array('class' => 'btn btn-success')) }}
             </div>
 
@@ -477,10 +477,11 @@
              type:'GET',
              success:function(data){
                  var obj = JSON.parse(data);
+                 console.log(obj);
                  $("#panel3 h2").html("<b>Ticket Form (edit)</b>");
-                 $("#panel3, select #subject").val(obj.subject);
-                 $("#panel3, select #channel").val(obj.channel);
-                 $("#panel3, select #status").val(obj.status);
+                 $("#subjectSelectBox").val(obj.subject_id);
+                 $("#channelSelectBox").val(obj.channel_id);
+                 $("#statusSelectBox").val(obj.status_id);
                  $("#panel3, [name='domain']").val(obj.domain);
                  $("#panel3, [name='problem']").val(obj.problem);
                  $("#panel3, [name='organization']").val(obj.organization);
@@ -494,7 +495,12 @@
 
                 //  $("#panel3, form").attr("method", "PUT");
                  $("#panel3, form").attr("action", "/dashboard/tickets/"+obj.id+"/update");
-
+                 $("#insertButton").prop('disabled', true);
+                 $(".edit-ticket.btn.btn-small").prop('disabled', true);
+                 $("#hideButton").html('Cancel');
+                 $('#hideButton').click(function() {
+                    location.reload();
+                 });
                  $('#panel3').collapse('show');
                  $('#panel3').goTo();
              }
