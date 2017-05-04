@@ -191,7 +191,44 @@ class TicketController extends BaseController {
 
   public function showTicket($id)
   {
+      $tickets = Ticket::where('id','=',$id)
+                ->with(['created_by', 'updated_by'])
+                ->get();
+                
+      $channels = Channel::all();
+      $selectChannels = array();
 
+      foreach($channels as $channel) {
+        $selectChannels[$channel->id] = $channel->name;
+      }
+
+      $subjects = Subject::all();
+      $selectSubjects = array();
+
+      foreach($subjects as $subject) {
+        $selectSubjects[$subject->id] = $subject->name;
+      }
+
+      $status = Status::all();
+      $selectStatus = array();
+
+      foreach($status as $status_one) {
+        $selectStatus[$status_one->id] = $status_one->name;
+      }
+
+      $teams = Team::all();
+      $selectTeams = array();
+
+      foreach($teams as $team) {
+        $selectTeams[$team->id] = $team->name;
+      }
+
+      return View::make('dashboard/tickets')
+            ->with('tickets',$tickets)
+            ->with('channels',$selectChannels)
+            ->with('status',$selectStatus)
+            ->with('subjects',$selectSubjects)
+            ->with('teams',$selectTeams);
   }
 
   public function editTicket($id)
@@ -221,7 +258,17 @@ class TicketController extends BaseController {
           $ticket->channel()->associate(Channel::where('id','=',Input::get('channel'))->first());
           $ticket->channel_info = Input::get('channel_info');
           $ticket->domain = Input::get('domain');
-          $ticket->status()->associate(Status::where('id','=',Input::get('status'))->first());
+          $status = Status::where('id','=',Input::get('status'))->first();
+          $ticket->status()->associate($status);
+          if ($status->name == "Close(AR)"){
+            Mail::send('emails.tickets.close_ar', array('id' => $ticket->id), function($message)
+              {
+                  $message->from(Auth::user()->email, Auth::user()->name);
+                  $message->to('teeravipark@gmail.com', 'AR Team')
+                          ->subject('Your ticket from Ticket Management System')
+                          ->cc(Auth::user()->email);
+              });
+          }
           $ticket->fax_id = Input::get('fax_id');
           $ticket->problem = Input::get('problem');
           $ticket->contact_name = Input::get('contact_name');
