@@ -355,7 +355,11 @@
             <td>
                 {{ Form::open(['id' => "delete_".$ticket->id,'method' => 'GET', 'style' => 'margin:0', 'route' => ['tickets.ban', $ticket->id]]) }}
                     <a class="details-control btn btn-small btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                    <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    @if (Auth::user()->username != $ticket->created_by()->first()->username)
+                      <a disabled="true" class="btn btn-small btn-default" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    @else
+                      <a id="{{ $ticket->id }}" class="edit-ticket btn btn-small btn-info" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    @endif
                     <a onclick="confirmDelete({{ $ticket->id }})" class="delete-ticket btn btn-small btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                 {{ Form::close() }}
             </td>
