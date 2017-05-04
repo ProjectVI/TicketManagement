@@ -171,8 +171,8 @@ class TicketController extends BaseController {
               {
                   $message->from(Auth::user()->email, Auth::user()->name);
                   $message->to('teeravipark@gmail.com', 'AR Team')
-                          ->subject('Your ticket from Ticket Management System')
-                          ->cc(Auth::user()->email);
+                          ->subject('Your ticket from Ticket Management System');
+                          // ->cc(Auth::user()->email);
               });
           }
           $ticket->status()->associate(Status::where('id','=',Input::get('status'))->first());
