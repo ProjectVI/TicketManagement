@@ -330,7 +330,8 @@ class TicketController extends BaseController {
                 $cell->setValue('id');
             });
         });
-      })->export('csv');
+      })->export('xls');
+      // Session::flash('message', $data);
       return Redirect::to('dashboard/tickets');
   }
 }
