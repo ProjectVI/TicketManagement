@@ -30,7 +30,7 @@ Route::group(array('prefix' => 'dashboard'), function()
 
 Route::group(array('prefix' => 'dashboard','before' => 'auth'), function()
 {
-		Route::group(array('prefix' => 'analytics'), function()
+		Route::group(array('prefix' => 'analytics','before' => 'auth|manager'), function()
 		{
 				Route::get('/', array('uses' => 'AnalyticController@index'));
 				Route::post('/export', array('as' => 'analytics.export','uses' => 'AnalyticController@exportReports'));

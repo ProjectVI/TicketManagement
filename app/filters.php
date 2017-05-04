@@ -52,7 +52,7 @@ Route::filter('manager', function()
 {
 	if (Auth::check())
 	{
-		if (Auth::user()->role->name == 'Manager' || Auth::user()->role->name == 'Admin')
+		if (Auth::user()->role->name != 'Manager' && Auth::user()->role->name != 'Admin')
 		{
 			if (Request::ajax())
 			{
