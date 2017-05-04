@@ -164,6 +164,17 @@ class TicketController extends BaseController {
           $ticket->channel()->associate(Channel::where('id','=',Input::get('channel'))->first());
           $ticket->channel_info = Input::get('channel_info');
           $ticket->domain = Input::get('domain');
+          $status = Status::where('id','=',Input::get('status'))->first();
+          $ticket->status()->associate($status);
+          if ($status->name == "Close(AR)"){
+            Mail::send('emails.tickets.close_ar', array('id' => $ticket->id), function($message)
+              {
+                  $message->from(Auth::user()->email, Auth::user()->name);
+                  $message->to('teeravipark@gmail.com', 'AR Team')
+                          ->subject('Your ticket from Ticket Management System')
+                          ->cc(Auth::user()->email);
+              });
+          }
           $ticket->status()->associate(Status::where('id','=',Input::get('status'))->first());
           $ticket->fax_id = Input::get('fax_id');
           $ticket->problem = Input::get('problem');
@@ -194,7 +205,7 @@ class TicketController extends BaseController {
       $tickets = Ticket::where('id','=',$id)
                 ->with(['created_by', 'updated_by'])
                 ->get();
-                
+
       $channels = Channel::all();
       $selectChannels = array();
 
@@ -264,9 +275,9 @@ class TicketController extends BaseController {
             Mail::send('emails.tickets.close_ar', array('id' => $ticket->id), function($message)
               {
                   $message->from(Auth::user()->email, Auth::user()->name);
-                  $message->to('teeravipark@gmail.com', 'AR Team')
-                          ->subject('Your ticket from Ticket Management System')
-                          ->cc(Auth::user()->email);
+                  $message->to('teeravipark@gmail.com', 'AR Team');
+                  // $message->cc(Auth::user()->email, Auth::user()->name);
+                  $message->subject('Your ticket from Ticket Management System');
               });
           }
           $ticket->fax_id = Input::get('fax_id');
