@@ -141,8 +141,9 @@
 </div>
 <div class="col-md-12" style="text-align:right">
     <button id="insertButton" style="margin-left:20px" type="button" class="btn btn-primary openpanel accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion" href="#panel3">+ Insert</button>
-    {{ Form::open(array('route' => array('tickets.export', $tickets))) }}
-    <button type="submit" class="btn btn-md btn-warning clearfix pull-right">Export CSV</button>
+    {{ Form::open(array('route' => array('tickets.export'))) }}
+      {{ Form::textarea('data', json_encode($tickets), ['style' => 'display:none']) }}
+      <button type="submit" class="btn btn-md btn-warning clearfix pull-right">Export CSV</button>
     {{ Form::close() }}
 
 </div>

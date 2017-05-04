@@ -316,8 +316,9 @@ class TicketController extends BaseController {
       return Redirect::to('dashboard/tickets');
   }
 
-  public function exportTickets($data)
+  public function exportTickets()
   {
+      $data = Input::get('data');
       $data = json_decode($data,true);
       Excel::create('Tickets', function($excel) use($data) {
         $excel->sheet('Sheet1', function($sheet) use($data) {
